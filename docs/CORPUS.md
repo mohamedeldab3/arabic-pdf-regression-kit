@@ -12,6 +12,9 @@ MIT applies to our content/code, not to the font, whose OFL remains applicable.
 
 Generator: fpdf2 2.8.9 with uharfbuzz 0.57.0. HarfBuzz shapes glyphs and fpdf2
 handles bidirectional runs; no manual reversal. Deterministic creation timestamp.
+Expected identifiers/numbers receive Unicode LTR embeddings in rendering input
+only, so the ISO date displays as 2026-10-24. Logical ground truth has no bidi
+formatting controls. The evaluator does not remove controls from extracted text.
 `arabic-pdf-kit fixtures generate --output regenerated` regenerates PDFs from
 the packaged manifest. `fixtures verify` verifies the committed corpus against
 hashes and independent source text. PDF byte stability is only expected with

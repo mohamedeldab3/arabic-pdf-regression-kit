@@ -1,0 +1,1561 @@
+{
+  "schema_version": 1,
+  "kit_version": "0.1.0",
+  "timestamp_utc": "2026-10-24T00:44:32.516701+00:00",
+  "python": "3.11.4",
+  "platform": "Windows-10-10.0.22621-SP0",
+  "corpus_sha256": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
+  "engine": {
+    "name": "pypdf",
+    "version": "6.21.2",
+    "configuration": {
+      "extraction_mode": "plain",
+      "ocr": false
+    }
+  },
+  "reproduce_argv": [
+    "arabic-pdf-kit",
+    "run",
+    "--engine",
+    "pypdf",
+    "--output",
+    "evidence/pypdf.json"
+  ],
+  "exit_code": 1,
+  "summary": {
+    "PASS": 0,
+    "FAIL": 8,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "results": [
+    {
+      "id": "arabic-only",
+      "tags": [
+        "arabic"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "arabic-only",
+        "tags": [
+          "arabic"
+        ],
+        "pages": [
+          "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا"
+        ],
+        "expected": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+        "phrases": [
+          "تشرق الشمس فوق المدينة",
+          "يقرأ الطفل كتابا جديدا"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "\u0006ت\u0012شر\fق ال\u0012شمس \u000fفو\fق المد\u0006ي\u0004ن\u0002ة \n\u0006ي\u001dقر!أ الط\u001dفل ك\u001aتا\u0019با \u0016جد\u0006يدا ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "تشرق الشمس فوق المدينة",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "يقرأ الطفل كتابا جديدا",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "expected_span": [
+            0,
+            0
+          ],
+          "actual_span": [
+            0,
+            1
+          ],
+          "expected": "",
+          "actual": "\u0006"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            1,
+            1
+          ],
+          "actual_span": [
+            2,
+            3
+          ],
+          "expected": "",
+          "actual": "\u0012"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            3,
+            3
+          ],
+          "actual_span": [
+            5,
+            6
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            7,
+            7
+          ],
+          "actual_span": [
+            10,
+            11
+          ],
+          "expected": "",
+          "actual": "\u0012"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            11,
+            11
+          ],
+          "actual_span": [
+            15,
+            16
+          ],
+          "expected": "",
+          "actual": "\u000f"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            13,
+            13
+          ],
+          "actual_span": [
+            18,
+            19
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            19,
+            19
+          ],
+          "actual_span": [
+            25,
+            26
+          ],
+          "expected": "",
+          "actual": "\u0006"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            20,
+            20
+          ],
+          "actual_span": [
+            27,
+            28
+          ],
+          "expected": "",
+          "actual": "\u0004"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            21,
+            21
+          ],
+          "actual_span": [
+            29,
+            30
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            23,
+            23
+          ],
+          "actual_span": [
+            32,
+            33
+          ],
+          "expected": "",
+          "actual": "\u0006"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            24,
+            24
+          ],
+          "actual_span": [
+            34,
+            35
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            26,
+            26
+          ],
+          "actual_span": [
+            37,
+            38
+          ],
+          "expected": "",
+          "actual": "!"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            31,
+            31
+          ],
+          "actual_span": [
+            43,
+            44
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            35,
+            35
+          ],
+          "actual_span": [
+            48,
+            49
+          ],
+          "expected": "",
+          "actual": "\u001a"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            37,
+            37
+          ],
+          "actual_span": [
+            51,
+            52
+          ],
+          "expected": "",
+          "actual": "\u0019"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            40,
+            40
+          ],
+          "actual_span": [
+            55,
+            56
+          ],
+          "expected": "",
+          "actual": "\u0016"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            42,
+            42
+          ],
+          "actual_span": [
+            58,
+            59
+          ],
+          "expected": "",
+          "actual": "\u0006"
+        }
+      ],
+      "pdf_sha256": "698448e4c357af063a6a576c71fecb5cc66938b1e941cdd5e5d050b57053f290"
+    },
+    {
+      "id": "mixed-paragraph",
+      "tags": [
+        "arabic",
+        "english",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "mixed-paragraph",
+        "tags": [
+          "arabic",
+          "english",
+          "bidi"
+        ],
+        "pages": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+        "phrases": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "identifiers": [
+          "Python",
+          "Open Source"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "‪‬ \rف\u000bي ال\u0007قاهر\u0002ة Open Source ‪‬ ومك\u001dت\u001bب\u0019ةPython ه+ذا )ت\u0007قر)ير ع'ن ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": false,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "identifiers",
+          "expected": "Python",
+          "detail": "Exact token absent"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "expected_span": [
+            0,
+            0
+          ],
+          "actual_span": [
+            0,
+            12
+          ],
+          "expected": "",
+          "actual": "‪‬ ف ي ال\u0007قا"
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            1,
+            6
+          ],
+          "actual_span": [
+            13,
+            13
+          ],
+          "expected": "ذا تق",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            7,
+            25
+          ],
+          "actual_span": [
+            14,
+            15
+          ],
+          "expected": "ير عن Python ومكتب",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            39,
+            40
+          ],
+          "actual_span": [
+            29,
+            59
+          ],
+          "expected": "ف",
+          "actual": "‪‬ ومك ت\u001bب\u0019ةPython ه+ذا )ت\u0007قر)"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            41,
+            41
+          ],
+          "actual_span": [
+            60,
+            61
+          ],
+          "expected": "",
+          "actual": "ر"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            42,
+            49
+          ],
+          "actual_span": [
+            62,
+            65
+          ],
+          "expected": "القاهرة",
+          "actual": "ع'ن"
+        }
+      ],
+      "pdf_sha256": "40ce21f22be25746fa665250bcc5005d507102a37cced69782c54b2c084a31c7"
+    },
+    {
+      "id": "invoice-id",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "invoice-id",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+        "phrases": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "identifiers": [
+          "INV-2026-042"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "‪‬ للعم\tيل ال\u0005جد\u0003يد INV-2026-042 ر\"قم ال\u001eفا\u0003تور\u0018ة ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            2
+          ],
+          "actual_span": [
+            0,
+            6
+          ],
+          "expected": "رق",
+          "actual": "‪‬ للع"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            3,
+            3
+          ],
+          "actual_span": [
+            7,
+            10
+          ],
+          "expected": "",
+          "actual": " يل"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            6,
+            12
+          ],
+          "actual_span": [
+            13,
+            19
+          ],
+          "expected": "فاتورة",
+          "actual": "\u0005جد\u0003يد"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            26,
+            29
+          ],
+          "actual_span": [
+            33,
+            36
+          ],
+          "expected": "للع",
+          "actual": "ر\"ق"
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            30,
+            32
+          ],
+          "actual_span": [
+            37,
+            37
+          ],
+          "expected": "يل",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            35,
+            39
+          ],
+          "actual_span": [
+            40,
+            49
+          ],
+          "expected": "جديد",
+          "actual": " فا\u0003تور\u0018ة"
+        }
+      ],
+      "pdf_sha256": "540b964f05db1bb85209d3d0ac9a479e11cc9cbdc66896f150e927bba9d66502"
+    },
+    {
+      "id": "product-order",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "product-order",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+        "phrases": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "identifiers": [
+          "SKU-AB12",
+          "ORD-907"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "‬‪ORD-907 ‪‬ \u0014ضم\u0011ن الطل\u000bب SKU-AB12 &تم $شح\u0011ن الم!ن\u001fت\u001dج ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            1
+          ],
+          "actual_span": [
+            0,
+            15
+          ],
+          "expected": "ت",
+          "actual": "‬‪ORD-907 ‪‬ \u0014ض"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            2,
+            5
+          ],
+          "actual_span": [
+            16,
+            17
+          ],
+          "expected": " شح",
+          "actual": "\u0011"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            9,
+            13
+          ],
+          "actual_span": [
+            21,
+            25
+          ],
+          "expected": "منتج",
+          "actual": "طل ب"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            23,
+            24
+          ],
+          "actual_span": [
+            35,
+            37
+          ],
+          "expected": "ض",
+          "actual": "&ت"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            25,
+            25
+          ],
+          "actual_span": [
+            38,
+            43
+          ],
+          "expected": "",
+          "actual": " $شح\u0011"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            29,
+            32
+          ],
+          "actual_span": [
+            47,
+            50
+          ],
+          "expected": "طلب",
+          "actual": "م!ن"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            40
+          ],
+          "actual_span": [
+            51,
+            54
+          ],
+          "expected": "ORD-907",
+          "actual": "ت ج"
+        }
+      ],
+      "pdf_sha256": "f8fdc9a2a43b606744921abfe5b84e20842b099829dbeb25752a380dd29ae40b"
+    },
+    {
+      "id": "two-digit-systems",
+      "tags": [
+        "digits",
+        "arabic-indic"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "two-digit-systems",
+        "tags": [
+          "digits",
+          "arabic-indic"
+        ],
+        "pages": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+        "phrases": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "123",
+          "١٢٣"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "‬‪١٢٣ ‪‬ وعدد ال\fأ\nقلام123 عدد الك\u0019ت\u0017ب",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": false
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "numbers",
+          "expected": "123",
+          "detail": "Exact token absent"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            5
+          ],
+          "expected": "عدد",
+          "actual": "‬‪١٢٣"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            4,
+            13
+          ],
+          "actual_span": [
+            6,
+            8
+          ],
+          "expected": "الكتب 123",
+          "actual": "‪‬"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            21,
+            21
+          ],
+          "actual_span": [
+            16,
+            17
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            22,
+            22
+          ],
+          "actual_span": [
+            18,
+            19
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            26,
+            26
+          ],
+          "actual_span": [
+            23,
+            26
+          ],
+          "expected": "",
+          "actual": "123"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            27,
+            30
+          ],
+          "actual_span": [
+            27,
+            38
+          ],
+          "expected": "١٢٣",
+          "actual": "عدد الك\u0019ت\u0017ب"
+        }
+      ],
+      "pdf_sha256": "64681858ee4908814783d3aa0e5df0f62643603702a3e9a509deda5fe5ec2870"
+    },
+    {
+      "id": "amount-date",
+      "tags": [
+        "decimal",
+        "date"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "amount-date",
+        "tags": [
+          "decimal",
+          "date"
+        ],
+        "pages": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+        "phrases": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "1250.75",
+          "2026-10-24"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "‬‪2026-10-24 ‪‬ \u0017ج\u0015ن\u0010يه \u0012ب\u0010تار\fي\nخ 1250.75 الم\u0015بل\u001cغ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            27
+          ],
+          "actual_span": [
+            0,
+            2
+          ],
+          "expected": "المبلغ 1250.75 جنيه بتاريخ ",
+          "actual": "‬‪"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            37,
+            37
+          ],
+          "actual_span": [
+            12,
+            51
+          ],
+          "expected": "",
+          "actual": " ‪‬ \u0017ج\u0015ن\u0010يه \u0012ب\u0010تار ي خ 1250.75 الم\u0015بل غ"
+        }
+      ],
+      "pdf_sha256": "f51357bed02fc666650a32502b055d12cfc91b46e5af8ee27b3e66533f06a411"
+    },
+    {
+      "id": "paragraph-order",
+      "tags": [
+        "order",
+        "paragraphs"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "paragraph-order",
+        "tags": [
+          "order",
+          "paragraphs"
+        ],
+        "pages": [
+          "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم"
+        ],
+        "expected": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم",
+        "phrases": [
+          "الفقرة الأولى بداية الرحلة",
+          "الفقرة الثانية وصول القطار",
+          "الفقرة الثالثة نهاية اليوم"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "ال\u0014ف\u0014قر\u0012ة ال\u0010أولى \fبدا\tي\u0002ة الرحل\u0002ة \nال\u0014ف\u0014قر\u0012ة ال\u001cثا\fن\u001cي\u0002ة وصول ال\u0014قطار \nال\u0014ف\u0014قر\u0012ة ال\u001cثال\u001cث\u0002ة \fنها\tي\u0002ة ال\u001cيوم ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الأولى بداية الرحلة",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الثانية وصول القطار",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الثالثة نهاية اليوم",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "expected_span": [
+            2,
+            2
+          ],
+          "actual_span": [
+            2,
+            3
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            3,
+            3
+          ],
+          "actual_span": [
+            4,
+            5
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            5,
+            5
+          ],
+          "actual_span": [
+            7,
+            8
+          ],
+          "expected": "",
+          "actual": "\u0012"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            9,
+            9
+          ],
+          "actual_span": [
+            12,
+            13
+          ],
+          "expected": "",
+          "actual": "\u0010"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            17,
+            17
+          ],
+          "actual_span": [
+            21,
+            22
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            18,
+            18
+          ],
+          "actual_span": [
+            23,
+            24
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            25,
+            25
+          ],
+          "actual_span": [
+            31,
+            32
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            29,
+            29
+          ],
+          "actual_span": [
+            36,
+            37
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            30,
+            30
+          ],
+          "actual_span": [
+            38,
+            39
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            32,
+            32
+          ],
+          "actual_span": [
+            41,
+            42
+          ],
+          "expected": "",
+          "actual": "\u0012"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            36,
+            36
+          ],
+          "actual_span": [
+            46,
+            47
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            38,
+            38
+          ],
+          "actual_span": [
+            49,
+            50
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            39,
+            39
+          ],
+          "actual_span": [
+            51,
+            52
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            40,
+            40
+          ],
+          "actual_span": [
+            53,
+            54
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            49,
+            49
+          ],
+          "actual_span": [
+            63,
+            64
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            56,
+            56
+          ],
+          "actual_span": [
+            71,
+            72
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            57,
+            57
+          ],
+          "actual_span": [
+            73,
+            74
+          ],
+          "expected": "",
+          "actual": "\u0014"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            59,
+            59
+          ],
+          "actual_span": [
+            76,
+            77
+          ],
+          "expected": "",
+          "actual": "\u0012"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            63,
+            63
+          ],
+          "actual_span": [
+            81,
+            82
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            66,
+            66
+          ],
+          "actual_span": [
+            85,
+            86
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            67,
+            67
+          ],
+          "actual_span": [
+            87,
+            88
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            72,
+            72
+          ],
+          "actual_span": [
+            93,
+            94
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            73,
+            73
+          ],
+          "actual_span": [
+            95,
+            96
+          ],
+          "expected": "",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            77,
+            77
+          ],
+          "actual_span": [
+            100,
+            101
+          ],
+          "expected": "",
+          "actual": " "
+        }
+      ],
+      "pdf_sha256": "a854b9b04e856330d4cbb9d5bad3dc99abb912e8439fc299aa6ef0e014364559"
+    },
+    {
+      "id": "page-order",
+      "tags": [
+        "order",
+        "pages"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "page-order",
+        "tags": [
+          "order",
+          "pages"
+        ],
+        "pages": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "expected": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج",
+        "phrases": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "الص\u0013فح\u0010ة ال\rأولى \tبدء العمل \n\nالص\u0013فح\u0010ة ال\u001aثا\tن\u001aي\u0010ة مرا\u001eجع\u0010ة ال\u001cن\u001aتا\tئ\u0016ج ",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الصفحة الأولى بدء العمل",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الصفحة الثانية مراجعة النتائج",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "insert",
+          "expected_span": [
+            3,
+            3
+          ],
+          "actual_span": [
+            3,
+            4
+          ],
+          "expected": "",
+          "actual": "\u0013"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            5,
+            5
+          ],
+          "actual_span": [
+            6,
+            7
+          ],
+          "expected": "",
+          "actual": "\u0010"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            9,
+            9
+          ],
+          "actual_span": [
+            11,
+            12
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            27,
+            27
+          ],
+          "actual_span": [
+            30,
+            31
+          ],
+          "expected": "",
+          "actual": "\u0013"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            29,
+            29
+          ],
+          "actual_span": [
+            33,
+            34
+          ],
+          "expected": "",
+          "actual": "\u0010"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            33,
+            33
+          ],
+          "actual_span": [
+            38,
+            39
+          ],
+          "expected": "",
+          "actual": "\u001a"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            35,
+            35
+          ],
+          "actual_span": [
+            41,
+            42
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            36,
+            36
+          ],
+          "actual_span": [
+            43,
+            44
+          ],
+          "expected": "",
+          "actual": "\u001a"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            37,
+            37
+          ],
+          "actual_span": [
+            45,
+            46
+          ],
+          "expected": "",
+          "actual": "\u0010"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            42,
+            42
+          ],
+          "actual_span": [
+            51,
+            52
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            44,
+            44
+          ],
+          "actual_span": [
+            54,
+            55
+          ],
+          "expected": "",
+          "actual": "\u0010"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            48,
+            48
+          ],
+          "actual_span": [
+            59,
+            60
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            49,
+            49
+          ],
+          "actual_span": [
+            61,
+            62
+          ],
+          "expected": "",
+          "actual": "\u001a"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            51,
+            51
+          ],
+          "actual_span": [
+            64,
+            65
+          ],
+          "expected": "",
+          "actual": " "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            52,
+            52
+          ],
+          "actual_span": [
+            66,
+            67
+          ],
+          "expected": "",
+          "actual": "\u0016"
+        }
+      ],
+      "pdf_sha256": "cbfc3842bf0701c93eb612346e1050c5b706a5eb60e150b324f8012e9becced9"
+    }
+  ]
+}
