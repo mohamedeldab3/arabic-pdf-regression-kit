@@ -30,7 +30,7 @@ fixtures = []
 (ROOT / "sources").mkdir(parents=True, exist_ok=True)
 for fixture_id, tags, pages, identifiers, numbers in CASES:
     expected = "\n\n".join(pages)
-    (ROOT / "sources" / f"{fixture_id}.txt").write_text(expected, encoding="utf-8")
+    (ROOT / "sources" / f"{fixture_id}.txt").write_text(expected, encoding="utf-8", newline="\n")
     fixtures.append({
         "id": fixture_id, "tags": tags, "pages": pages, "expected": expected,
         "phrases": [line for page in pages for line in page.splitlines() if line],
@@ -40,5 +40,5 @@ for fixture_id, tags, pages, identifiers, numbers in CASES:
     })
 (ROOT / "manifest.json").write_text(
     json.dumps({"schema_version": 1, "fixtures": fixtures}, ensure_ascii=False, indent=2) + "\n",
-    encoding="utf-8",
+    encoding="utf-8", newline="\n",
 )

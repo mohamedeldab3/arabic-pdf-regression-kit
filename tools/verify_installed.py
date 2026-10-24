@@ -14,7 +14,8 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("--python", type=Path, required=True)
 args = parser.parse_args()
-python = args.python.resolve()
+# Keep the venv path: resolving a POSIX interpreter symlink escapes its bin/.
+python = args.python.absolute()
 console = python.with_name("arabic-pdf-kit.exe" if os.name == "nt" else "arabic-pdf-kit")
 root = Path(__file__).resolve().parents[1]
 env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"}
