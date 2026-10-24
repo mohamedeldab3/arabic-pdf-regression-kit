@@ -1,0 +1,40 @@
+name: Reproducible extraction finding
+description: Report a minimal extraction failure or regression with independently specified expectations.
+body:
+  - type: textarea
+    id: engine
+    attributes:
+      label: Engine, exact version, Python, platform and configuration
+      description: Include OCR settings and comparison mode. Do not paste API keys or private account data.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction command and fixture ID
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Independent expected logical text and observed finding
+      description: Explain how the expected text was specified independently of the extractor.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Document provenance and redistribution permission
+      description: Use original synthetic content or a document with explicit permission. Do not upload personal or confidential documents.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Observed result
+      options:
+        - FAIL - extraction completed but violated expectations
+        - ERROR - extraction or infrastructure failed
+        - Regression between two recorded versions
+    validations:
+      required: true

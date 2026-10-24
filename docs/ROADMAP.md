@@ -5,9 +5,11 @@
 - Explicit strict/NFC/whitespace diagnostics and token/order checks.
 - Optional Docling and pypdf adapters, saved outputs, JSON/HTML and run comparison.
 - Offline mutation/positive controls, packaging and CI configuration.
+- Actual Docling extraction and pypdf 6.21.1/6.21.2 version-comparison evidence.
+- Hosted Windows/Ubuntu matrix verification and prepared maintainer documentation.
 
 ## Next evidence and usability work
-- Reproduce across Linux/macOS and multiple pinned engine versions.
+- Reproduce extraction on macOS and additional pinned engine versions.
 - Add structured run-schema validation and richer missing-content diagnostics.
 - Add an authorized real-world reproducer when one is available.
 - Audit deterministic PDF byte reproduction across pinned fonttools versions.

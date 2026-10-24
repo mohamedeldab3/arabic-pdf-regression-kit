@@ -5,18 +5,21 @@ truth/provenance/font license, visual inspection, deterministic evaluator, optio
 real adapters, offline controls, CLI, comparison, portable escaped JSON/HTML,
 CI configuration, contribution guide and version-pinned subset example.
 
-Local delivery only: feature branch codex/arabic-pdf-regression-v01. No push,
-package publication, deployment, application or upstream messages were performed.
+Work was implemented on codex/arabic-pdf-regression-v01 and pushed after explicit
+user authorization. The verified implementation is being delivered on main.
+No package publication, deployment, application submission or upstream messages
+were performed.
 Existing MIT license retained. No pre-existing implementation/uncommitted work.
 
 Real pypdf evidence is recorded (8 FAIL, no extraction errors). All 35 offline
 tests, lint, typing, build and the clean installed-wheel quickstart passed.
-Docling 2.142.1 was installed and attempted: layout weights could not be fully
-downloaded; explicit offline cache verification recorded 1 ERROR. See RESULTS.md
-for the exact artifact/revision, observed attempts and reproduction commands.
-No Docling Arabic accuracy result is claimed. Browser preview connection was also
+Docling 2.142.1 completed all eight fixtures: 0 PASS, 8 FAIL, 0 ERROR, 0 SKIPPED.
+The layout-model download was recovered and SHA-256 verified. pypdf 6.21.1 and
+6.21.2 were both measured; their per-check comparison found no changes.
+See RESULTS.md for artifacts/revisions and reproduction commands. Browser preview was
 unavailable; PDF visual QA and HTML unit/CLI checks completed independently.
-Hosted CI has not run because these changes are local.
+Hosted CI passed Windows/Linux x Python 3.11/3.12 at commit 1dae18f; see RESULTS.md.
+The application packet and six-month maintenance plan are prepared in docs/.
 
 To continue: read RESULTS.md first, reproduce the installed-wheel quickstart, then
 prioritize additional engine-version evidence and authorized real-world cases.
@@ -30,6 +33,8 @@ Public demonstration checklist:
 - [x] CLI diagnostics and shareable static report with version/config/repro command.
 - [x] Test, typing, lint, packaging and clean-install verification tooling.
 - [x] Honest early-stage description and explicit limits.
-- [ ] Hosted CI execution and Linux/macOS verification.
-- [ ] Complete Docling extraction after public layout model weights are available.
+- [x] Hosted CI execution and Linux/Windows verification.
+- [x] Complete Docling extraction after public layout model weights are available.
+- [x] Prepared application answers under the official 500-character limits.
+- [ ] macOS verification.
 - [ ] Broader real-world corpus or demonstrated external adoption.

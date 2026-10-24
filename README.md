@@ -1,10 +1,19 @@
 # Arabic PDF Regression Kit
 
-An **early-stage independent** Python kit for reproducing Arabic and mixed
+[![CI](https://github.com/mohamedeldab3/arabic-pdf-regression-kit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mohamedeldab3/arabic-pdf-regression-kit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+An independent Python kit for reproducing Arabic and mixed
 Arabic/English PDF text-extraction regressions. Eight tiny original fixtures make
 word order, Latin identifiers, numbers, dates and page/paragraph order explicit.
 This is a diagnostic harness, not an OCR model or a general accuracy benchmark.
 No upstream affiliation or adoption is claimed.
+
+**Recorded evidence:** Docling 2.142.1 and pypdf 6.21.1/6.21.2 have been run on
+the corpus. The kit detects their violated expectations, preserves raw outputs,
+and compares upgrade behavior. Core CI has passed on Windows and Ubuntu with
+Python 3.11 and 3.12. [Results](docs/RESULTS.md) · [Changelog](CHANGELOG.md) ·
+[Contributing](CONTRIBUTING.md).
 
 ## Quickstart (Python 3.11+)
 
@@ -94,9 +103,13 @@ See [results and blockers](docs/RESULTS.md) for the actual run, separately from
 synthetic evaluator tests. We do not claim the historical issue examples have
 been reproduced or fixed.
 
-Current local Docling evidence is **1 ERROR**: public layout weights did not
-finish downloading, and an explicit offline cache check confirmed the missing
-model.safetensors. No Docling Arabic quality score is available.
+Recorded Docling 2.142.1 extraction completed on all eight fixtures: **0 PASS,
+8 FAIL, 0 ERROR, 0 SKIPPED**. The layout-weight download was recovered using the
+pinned public artifact and verified SHA-256; extraction then ran from the complete
+local cache. [Raw run](evidence/docling-2.142.1.json) ·
+[HTML report](evidence/docling-2.142.1.html). These are contract failures on this
+specific corpus, not a general Arabic accuracy score or a reproduction of an
+upstream issue attachment.
 
 ## Development and CI integration
 
@@ -128,8 +141,8 @@ python tools/verify_installed.py --python .venv-clean/Scripts/python.exe
 ```
 
 The verifier exercises six console commands outside the checkout with PYTHONPATH
-removed. The [CI workflow](.github/workflows/ci.yml) configures Python 3.11/3.12 on
-Windows/Linux; configured CI is not evidence of a hosted run until actually run.
+removed. The [CI workflow](.github/workflows/ci.yml) runs Python 3.11/3.12 on
+Windows/Linux. [Verified hosted matrix run](https://github.com/mohamedeldab3/arabic-pdf-regression-kit/actions/runs/40048373609).
 
 ## Limits and provenance
 
