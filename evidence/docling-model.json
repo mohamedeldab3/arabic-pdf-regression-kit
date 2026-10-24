@@ -1,0 +1,10 @@
+{
+  "repository": "docling-project/docling-layout-heron",
+  "revision": "8f39ad3c0b4c58e9c2d2c84a38465abf757272d8",
+  "filename": "model.safetensors",
+  "bytes": 171658996,
+  "sha256": "00333a43451945aaf89db8ca9c0a17e75d1537c17db60fdb91aa95f4c7929e0c",
+  "source": "https://huggingface.co/docling-project/docling-layout-heron/resolve/8f39ad3c0b4c58e9c2d2c84a38465abf757272d8/model.safetensors",
+  "license": "Apache-2.0 per upstream model card",
+  "redistributed": false
+}

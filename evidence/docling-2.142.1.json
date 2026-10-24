@@ -1,0 +1,1903 @@
+{
+  "schema_version": 1,
+  "kit_version": "0.1.0",
+  "timestamp_utc": "2026-10-24T01:08:27.924484+00:00",
+  "python": "3.11.4",
+  "platform": "Windows-10-10.0.22621-SP0",
+  "corpus_sha256": "d5d8f98fd5afa53fcb0c24fdb7c72f77963686742b062162aa40ad4418bc8dd7",
+  "engine": {
+    "name": "docling",
+    "version": "2.142.1",
+    "model_environment": {
+      "HF_HUB_OFFLINE": "1"
+    },
+    "configuration": {
+      "ocr": false,
+      "device": "cpu",
+      "table_structure": false
+    }
+  },
+  "reproduce_argv": [
+    "arabic-pdf-kit",
+    "run",
+    "--engine",
+    "docling",
+    "--output",
+    "evidence/docling-2.142.1.json",
+    "--html",
+    "evidence/docling-2.142.1.html"
+  ],
+  "exit_code": 1,
+  "summary": {
+    "PASS": 0,
+    "FAIL": 8,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "results": [
+    {
+      "id": "arabic-only",
+      "tags": [
+        "arabic"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "arabic-only",
+        "tags": [
+          "arabic"
+        ],
+        "pages": [
+          "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا"
+        ],
+        "expected": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+        "phrases": [
+          "تشرق الشمس فوق المدينة",
+          "يقرأ الطفل كتابا جديدا"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "ة\n\nن � ي� ق المد� ف و� ش مس � ق ال� ش ر� ت� � يدا ج د� با � ت ا� فل ك� أ الط� ق ر! ي� �",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "تشرق الشمس فوق المدينة",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "يقرأ الطفل كتابا جديدا",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            4
+          ],
+          "actual_span": [
+            0,
+            1
+          ],
+          "expected": "تشرق",
+          "actual": "ة"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            5,
+            10
+          ],
+          "actual_span": [
+            2,
+            3
+          ],
+          "expected": "الشمس",
+          "actual": "ن"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            11,
+            13
+          ],
+          "actual_span": [
+            4,
+            9
+          ],
+          "expected": "فو",
+          "actual": "� ي� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            19,
+            22
+          ],
+          "actual_span": [
+            15,
+            44
+          ],
+          "expected": "ينة",
+          "actual": "� ف و� ش مس � ق ال� ش ر� ت� �"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            26
+          ],
+          "actual_span": [
+            46,
+            70
+          ],
+          "expected": "قر",
+          "actual": "دا ج د� با � ت ا� فل ك� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            31,
+            33
+          ],
+          "actual_span": [
+            75,
+            76
+          ],
+          "expected": "فل",
+          "actual": "�"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            34,
+            39
+          ],
+          "actual_span": [
+            77,
+            78
+          ],
+          "expected": "كتابا",
+          "actual": "ق"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            40,
+            42
+          ],
+          "actual_span": [
+            79,
+            82
+          ],
+          "expected": "جد",
+          "actual": "ر! "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            43,
+            45
+          ],
+          "actual_span": [
+            83,
+            86
+          ],
+          "expected": "دا",
+          "actual": "� �"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            4
+          ],
+          "actual_span": [
+            0,
+            1
+          ],
+          "expected": "تشرق",
+          "actual": "ة"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            5,
+            10
+          ],
+          "actual_span": [
+            2,
+            3
+          ],
+          "expected": "الشمس",
+          "actual": "ن"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            11,
+            13
+          ],
+          "actual_span": [
+            4,
+            9
+          ],
+          "expected": "فو",
+          "actual": "� ي� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            19,
+            22
+          ],
+          "actual_span": [
+            15,
+            44
+          ],
+          "expected": "ينة",
+          "actual": "� ف و� ش مس � ق ال� ش ر� ت� �"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            26
+          ],
+          "actual_span": [
+            46,
+            70
+          ],
+          "expected": "قر",
+          "actual": "دا ج د� با � ت ا� فل ك� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            31,
+            33
+          ],
+          "actual_span": [
+            75,
+            76
+          ],
+          "expected": "فل",
+          "actual": "�"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            34,
+            39
+          ],
+          "actual_span": [
+            77,
+            78
+          ],
+          "expected": "كتابا",
+          "actual": "ق"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            40,
+            42
+          ],
+          "actual_span": [
+            79,
+            82
+          ],
+          "expected": "جد",
+          "actual": "ر! "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            43,
+            45
+          ],
+          "actual_span": [
+            83,
+            86
+          ],
+          "expected": "دا",
+          "actual": "� �"
+        }
+      ],
+      "pdf_sha256": "698448e4c357af063a6a576c71fecb5cc66938b1e941cdd5e5d050b57053f290"
+    },
+    {
+      "id": "mixed-paragraph",
+      "tags": [
+        "arabic",
+        "english",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "mixed-paragraph",
+        "tags": [
+          "arabic",
+          "english",
+          "bidi"
+        ],
+        "pages": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+        "phrases": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "identifiers": [
+          "Python",
+          "Open Source"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "ة\n\nق اهر� ي ال� ف � ة � ‬‪Open Source ب � ت � ن ‬‪Python ومك� ير ع' ق ر) ت� ذ ا ) ه+",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            25
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "هذا تقرير عن Python ومكتب",
+          "actual": ""
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            27,
+            27
+          ],
+          "actual_span": [
+            2,
+            25
+          ],
+          "expected": "",
+          "actual": "ق اهر� ي ال� ف � ة � ‬‪"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            39,
+            40
+          ],
+          "actual_span": [
+            37,
+            61
+          ],
+          "expected": "ف",
+          "actual": "ب � ت � ن ‬‪Python ومك� "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            41,
+            41
+          ],
+          "actual_span": [
+            62,
+            76
+          ],
+          "expected": "",
+          "actual": "ر ع' ق ر) ت� ذ"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            43,
+            46
+          ],
+          "actual_span": [
+            78,
+            81
+          ],
+          "expected": "لقا",
+          "actual": " ) "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            47,
+            49
+          ],
+          "actual_span": [
+            82,
+            83
+          ],
+          "expected": "رة",
+          "actual": "+"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            25
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "هذا تقرير عن Python ومكتب",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            39,
+            40
+          ],
+          "actual_span": [
+            37,
+            61
+          ],
+          "expected": "ف",
+          "actual": "ب � ت � ن ‬‪Python ومك� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            43,
+            46
+          ],
+          "actual_span": [
+            78,
+            81
+          ],
+          "expected": "لقا",
+          "actual": " ) "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            47,
+            49
+          ],
+          "actual_span": [
+            82,
+            83
+          ],
+          "expected": "رة",
+          "actual": "+"
+        }
+      ],
+      "pdf_sha256": "40ce21f22be25746fa665250bcc5005d507102a37cced69782c54b2c084a31c7"
+    },
+    {
+      "id": "invoice-id",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "invoice-id",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+        "phrases": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "identifiers": [
+          "INV-2026-042"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "يد ج د� يل ال� ة ‬‪INV-2026-042 للعم� تور� ف ا� قم ال� ر\"",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            10
+          ],
+          "expected": "رقم",
+          "actual": "يد ج د� يل"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            6,
+            11
+          ],
+          "actual_span": [
+            13,
+            15
+          ],
+          "expected": "فاتور",
+          "actual": "� "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            13,
+            13
+          ],
+          "actual_span": [
+            17,
+            19
+          ],
+          "expected": "",
+          "actual": "‬‪"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            30,
+            32
+          ],
+          "actual_span": [
+            36,
+            50
+          ],
+          "expected": "يل",
+          "actual": "� تور� ف ا� قم"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            35,
+            39
+          ],
+          "actual_span": [
+            53,
+            57
+          ],
+          "expected": "جديد",
+          "actual": "� ر\""
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            10
+          ],
+          "expected": "رقم",
+          "actual": "يد ج د� يل"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            6,
+            11
+          ],
+          "actual_span": [
+            13,
+            15
+          ],
+          "expected": "فاتور",
+          "actual": "� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            30,
+            32
+          ],
+          "actual_span": [
+            36,
+            50
+          ],
+          "expected": "يل",
+          "actual": "� تور� ف ا� قم"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            35,
+            39
+          ],
+          "actual_span": [
+            53,
+            57
+          ],
+          "expected": "جديد",
+          "actual": "� ر\""
+        }
+      ],
+      "pdf_sha256": "540b964f05db1bb85209d3d0ac9a479e11cc9cbdc66896f150e927bba9d66502"
+    },
+    {
+      "id": "product-order",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "product-order",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+        "phrases": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "identifiers": [
+          "SKU-AB12",
+          "ORD-907"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "ب ‬‪ORD-907 ن الطل� ض م� � ‬ ج ‪SKU-AB12 ت � ن � ن الم! ش ح� تم $ &",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            2
+          ],
+          "actual_span": [
+            0,
+            1
+          ],
+          "expected": "تم",
+          "actual": "ب"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            3,
+            5
+          ],
+          "actual_span": [
+            2,
+            12
+          ],
+          "expected": "شح",
+          "actual": "‬‪ORD-907 "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            9,
+            9
+          ],
+          "actual_span": [
+            16,
+            22
+          ],
+          "expected": "",
+          "actual": "طل� ض "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            10,
+            12
+          ],
+          "actual_span": [
+            23,
+            29
+          ],
+          "expected": "نت",
+          "actual": "� � ‬ "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            14,
+            14
+          ],
+          "actual_span": [
+            31,
+            32
+          ],
+          "expected": "",
+          "actual": "‪"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            23,
+            25
+          ],
+          "actual_span": [
+            41,
+            49
+          ],
+          "expected": "ضم",
+          "actual": "ت � ن � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            29,
+            32
+          ],
+          "actual_span": [
+            53,
+            55
+          ],
+          "expected": "طلب",
+          "actual": "م!"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            40
+          ],
+          "actual_span": [
+            56,
+            67
+          ],
+          "expected": "ORD-907",
+          "actual": "ش ح� تم $ &"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            2
+          ],
+          "actual_span": [
+            0,
+            1
+          ],
+          "expected": "تم",
+          "actual": "ب"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            3,
+            5
+          ],
+          "actual_span": [
+            2,
+            12
+          ],
+          "expected": "شح",
+          "actual": "‬‪ORD-907 "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            10,
+            12
+          ],
+          "actual_span": [
+            23,
+            29
+          ],
+          "expected": "نت",
+          "actual": "� � ‬ "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            23,
+            25
+          ],
+          "actual_span": [
+            41,
+            49
+          ],
+          "expected": "ضم",
+          "actual": "ت � ن � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            29,
+            32
+          ],
+          "actual_span": [
+            53,
+            55
+          ],
+          "expected": "طلب",
+          "actual": "م!"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            40
+          ],
+          "actual_span": [
+            56,
+            67
+          ],
+          "expected": "ORD-907",
+          "actual": "ش ح� تم $ &"
+        }
+      ],
+      "pdf_sha256": "f8fdc9a2a43b606744921abfe5b84e20842b099829dbeb25752a380dd29ae40b"
+    },
+    {
+      "id": "two-digit-systems",
+      "tags": [
+        "digits",
+        "arabic-indic"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "two-digit-systems",
+        "tags": [
+          "digits",
+          "arabic-indic"
+        ],
+        "pages": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+        "phrases": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "123",
+          "١٢٣"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "قلام ٣٢١‬‪ أ� ‬ وعدد ال� ب ‪123 ت � عدد الك�",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": false
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "numbers",
+          "expected": "١٢٣",
+          "detail": "Exact token absent"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            4
+          ],
+          "expected": "عدد",
+          "actual": "قلام"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            4,
+            9
+          ],
+          "actual_span": [
+            5,
+            10
+          ],
+          "expected": "الكتب",
+          "actual": "٣٢١‬‪"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            10,
+            13
+          ],
+          "actual_span": [
+            11,
+            15
+          ],
+          "expected": "123",
+          "actual": "أ� ‬"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            21,
+            23
+          ],
+          "actual_span": [
+            23,
+            41
+          ],
+          "expected": "أق",
+          "actual": "� ب ‪123 ت � عدد ا"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            30
+          ],
+          "actual_span": [
+            42,
+            44
+          ],
+          "expected": "ام ١٢٣",
+          "actual": "ك�"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            4
+          ],
+          "expected": "عدد",
+          "actual": "قلام"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            4,
+            9
+          ],
+          "actual_span": [
+            5,
+            10
+          ],
+          "expected": "الكتب",
+          "actual": "٣٢١‬‪"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            10,
+            13
+          ],
+          "actual_span": [
+            11,
+            15
+          ],
+          "expected": "123",
+          "actual": "أ� ‬"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            21,
+            23
+          ],
+          "actual_span": [
+            23,
+            41
+          ],
+          "expected": "أق",
+          "actual": "� ب ‪123 ت � عدد ا"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            30
+          ],
+          "actual_span": [
+            42,
+            44
+          ],
+          "expected": "ام ١٢٣",
+          "actual": "ك�"
+        }
+      ],
+      "pdf_sha256": "64681858ee4908814783d3aa0e5df0f62643603702a3e9a509deda5fe5ec2870"
+    },
+    {
+      "id": "amount-date",
+      "tags": [
+        "decimal",
+        "date"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "amount-date",
+        "tags": [
+          "decimal",
+          "date"
+        ],
+        "pages": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+        "phrases": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "1250.75",
+          "2026-10-24"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "خ ‬‪2026-10-24 ي� ت ار� ب� يه � ن � ج � � ‬ غ ‪1250.75 ب ل� الم�",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            25
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "المبلغ 1250.75 جنيه بتاري",
+          "actual": ""
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            27,
+            27
+          ],
+          "actual_span": [
+            2,
+            4
+          ],
+          "expected": "",
+          "actual": "‬‪"
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            37,
+            37
+          ],
+          "actual_span": [
+            14,
+            64
+          ],
+          "expected": "",
+          "actual": " ي� ت ار� ب� يه � ن � ج � � ‬ غ ‪1250.75 ب ل� الم�"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            25
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "المبلغ 1250.75 جنيه بتاري",
+          "actual": ""
+        }
+      ],
+      "pdf_sha256": "f51357bed02fc666650a32502b055d12cfc91b46e5af8ee27b3e66533f06a411"
+    },
+    {
+      "id": "paragraph-order",
+      "tags": [
+        "order",
+        "paragraphs"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "paragraph-order",
+        "tags": [
+          "order",
+          "paragraphs"
+        ],
+        "pages": [
+          "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم"
+        ],
+        "expected": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم",
+        "phrases": [
+          "الفقرة الأولى بداية الرحلة",
+          "الفقرة الثانية وصول القطار",
+          "الفقرة الثالثة نهاية اليوم"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "ة\n\nة الرحل� ي� ب دا� أولى � ة ال� ق ر� ف � ال� قطار ة وصول ال� ي� ن� ث ا� ة ال� ق ر� ف � ال� يوم ة ال� ي� ن ها� ة � ث � ث ال� ة ال� ق ر� ف � ال�",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الأولى بداية الرحلة",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الثانية وصول القطار",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الفقرة الثالثة نهاية اليوم",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            5
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "الفقر",
+          "actual": ""
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            7,
+            18
+          ],
+          "actual_span": [
+            2,
+            2
+          ],
+          "expected": "الأولى بداي",
+          "actual": ""
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            25,
+            25
+          ],
+          "actual_span": [
+            9,
+            27
+          ],
+          "expected": "",
+          "actual": "� ي� ب دا� أولى � "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            29,
+            29
+          ],
+          "actual_span": [
+            31,
+            38
+          ],
+          "expected": "",
+          "actual": "� ق ر� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            30,
+            33
+          ],
+          "actual_span": [
+            39,
+            41
+          ],
+          "expected": "قرة",
+          "actual": " �"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            36,
+            37
+          ],
+          "actual_span": [
+            44,
+            48
+          ],
+          "expected": "ث",
+          "actual": "� قط"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            38,
+            40
+          ],
+          "actual_span": [
+            49,
+            51
+          ],
+          "expected": "ني",
+          "actual": "ر "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            49,
+            53
+          ],
+          "actual_span": [
+            60,
+            69
+          ],
+          "expected": "قطار",
+          "actual": "� ي� ن� ث"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            55,
+            59
+          ],
+          "actual_span": [
+            71,
+            73
+          ],
+          "expected": "لفقر",
+          "actual": "� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            63,
+            64
+          ],
+          "actual_span": [
+            77,
+            88
+          ],
+          "expected": "ث",
+          "actual": "� ق ر� ف � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            66,
+            68
+          ],
+          "actual_span": [
+            90,
+            91
+          ],
+          "expected": "ثة",
+          "actual": "�"
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            69,
+            72
+          ],
+          "actual_span": [
+            92,
+            92
+          ],
+          "expected": "نها",
+          "actual": ""
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            73,
+            73
+          ],
+          "actual_span": [
+            93,
+            96
+          ],
+          "expected": "",
+          "actual": "وم "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            77,
+            77
+          ],
+          "actual_span": [
+            100,
+            102
+          ],
+          "expected": "",
+          "actual": "� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            78,
+            80
+          ],
+          "actual_span": [
+            103,
+            143
+          ],
+          "expected": "وم",
+          "actual": "� ن ها� ة � ث � ث ال� ة ال� ق ر� ف � ال�"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            5
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "الفقر",
+          "actual": ""
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            7,
+            18
+          ],
+          "actual_span": [
+            2,
+            2
+          ],
+          "expected": "الأولى بداي",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            30,
+            33
+          ],
+          "actual_span": [
+            39,
+            41
+          ],
+          "expected": "قرة",
+          "actual": " �"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            36,
+            37
+          ],
+          "actual_span": [
+            44,
+            48
+          ],
+          "expected": "ث",
+          "actual": "� قط"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            38,
+            40
+          ],
+          "actual_span": [
+            49,
+            51
+          ],
+          "expected": "ني",
+          "actual": "ر "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            49,
+            53
+          ],
+          "actual_span": [
+            60,
+            69
+          ],
+          "expected": "قطار",
+          "actual": "� ي� ن� ث"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            55,
+            59
+          ],
+          "actual_span": [
+            71,
+            73
+          ],
+          "expected": "لفقر",
+          "actual": "� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            63,
+            64
+          ],
+          "actual_span": [
+            77,
+            88
+          ],
+          "expected": "ث",
+          "actual": "� ق ر� ف � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            66,
+            68
+          ],
+          "actual_span": [
+            90,
+            91
+          ],
+          "expected": "ثة",
+          "actual": "�"
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            69,
+            72
+          ],
+          "actual_span": [
+            92,
+            92
+          ],
+          "expected": "نها",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            78,
+            80
+          ],
+          "actual_span": [
+            103,
+            143
+          ],
+          "expected": "وم",
+          "actual": "� ن ها� ة � ث � ث ال� ة ال� ق ر� ف � ال�"
+        }
+      ],
+      "pdf_sha256": "a854b9b04e856330d4cbb9d5bad3dc99abb912e8439fc299aa6ef0e014364559"
+    },
+    {
+      "id": "page-order",
+      "tags": [
+        "order",
+        "pages"
+      ],
+      "status": "FAIL",
+      "expectations": {
+        "id": "page-order",
+        "tags": [
+          "order",
+          "pages"
+        ],
+        "pages": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "expected": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج",
+        "phrases": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "بدء العمل أولى � ة ال� ف ح� الص�\n\nج\n\nئ� ت ا� ن � ة ال� ج ع� ة مرا� ي� ن� ث ا� ة ال� ف ح� الص�",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": false,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [
+        {
+          "kind": "text",
+          "detail": "Selected text comparison differs"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الصفحة الأولى بدء العمل",
+          "detail": "Missing or out of logical order"
+        },
+        {
+          "kind": "phrase",
+          "expected": "الصفحة الثانية مراجعة النتائج",
+          "detail": "Missing or out of logical order"
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            14
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "الصفحة الأولى ",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            25
+          ],
+          "actual_span": [
+            10,
+            12
+          ],
+          "expected": "ا",
+          "actual": "أو"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            26,
+            29
+          ],
+          "actual_span": [
+            13,
+            17
+          ],
+          "expected": "صفح",
+          "actual": "ى � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            34
+          ],
+          "actual_span": [
+            21,
+            28
+          ],
+          "expected": "ث",
+          "actual": "� ف ح� "
+        },
+        {
+          "kind": "insert",
+          "expected_span": [
+            35,
+            35
+          ],
+          "actual_span": [
+            29,
+            43
+          ],
+          "expected": "",
+          "actual": "لص� ج ئ� ت ا� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            36,
+            37
+          ],
+          "actual_span": [
+            44,
+            58
+          ],
+          "expected": "ي",
+          "actual": " � ة ال� ج ع� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            42,
+            44
+          ],
+          "actual_span": [
+            63,
+            76
+          ],
+          "expected": "جع",
+          "actual": "� ي� ن� ث ا� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            48,
+            50
+          ],
+          "actual_span": [
+            80,
+            87
+          ],
+          "expected": "نت",
+          "actual": "� ف ح� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            51,
+            53
+          ],
+          "actual_span": [
+            88,
+            91
+          ],
+          "expected": "ئج",
+          "actual": "لص�"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            14
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "الصفحة الأولى ",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            24,
+            25
+          ],
+          "actual_span": [
+            10,
+            12
+          ],
+          "expected": "ا",
+          "actual": "أو"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            26,
+            29
+          ],
+          "actual_span": [
+            13,
+            17
+          ],
+          "expected": "صفح",
+          "actual": "ى � "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            34
+          ],
+          "actual_span": [
+            21,
+            28
+          ],
+          "expected": "ث",
+          "actual": "� ف ح� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            36,
+            37
+          ],
+          "actual_span": [
+            44,
+            58
+          ],
+          "expected": "ي",
+          "actual": " � ة ال� ج ع� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            42,
+            44
+          ],
+          "actual_span": [
+            63,
+            76
+          ],
+          "expected": "جع",
+          "actual": "� ي� ن� ث ا� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            48,
+            50
+          ],
+          "actual_span": [
+            80,
+            87
+          ],
+          "expected": "نت",
+          "actual": "� ف ح� "
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            51,
+            53
+          ],
+          "actual_span": [
+            88,
+            91
+          ],
+          "expected": "ئج",
+          "actual": "لص�"
+        }
+      ],
+      "pdf_sha256": "cbfc3842bf0701c93eb612346e1050c5b706a5eb60e150b324f8012e9becced9"
+    }
+  ]
+}
