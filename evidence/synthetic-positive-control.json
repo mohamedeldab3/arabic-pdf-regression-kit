@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "kit_version": "0.1.0",
+  "timestamp_utc": "2026-10-24T00:54:37.948511+00:00",
+  "python": "3.11.4",
+  "platform": "Windows-10-10.0.22621-SP0",
+  "corpus_sha256": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
+  "engine": {
+    "name": "synthetic-positive-control",
+    "version": "1",
+    "configuration": {
+      "purpose": "Authored logical text; NOT an engine benchmark"
+    }
+  },
+  "reproduce_argv": [
+    "arabic-pdf-kit",
+    "evaluate",
+    "examples/positive-control.json",
+    "--output",
+    "evidence/synthetic-positive-control.json",
+    "--html",
+    "evidence/synthetic-positive-control.html"
+  ],
+  "exit_code": 0,
+  "summary": {
+    "PASS": 8,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIPPED": 0
+  },
+  "results": [
+    {
+      "id": "arabic-only",
+      "tags": [
+        "arabic"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "arabic-only",
+        "tags": [
+          "arabic"
+        ],
+        "pages": [
+          "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا"
+        ],
+        "expected": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+        "phrases": [
+          "تشرق الشمس فوق المدينة",
+          "يقرأ الطفل كتابا جديدا"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "mixed-paragraph",
+      "tags": [
+        "arabic",
+        "english",
+        "bidi"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "mixed-paragraph",
+        "tags": [
+          "arabic",
+          "english",
+          "bidi"
+        ],
+        "pages": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+        "phrases": [
+          "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+        ],
+        "identifiers": [
+          "Python",
+          "Open Source"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "invoice-id",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "invoice-id",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+        "phrases": [
+          "رقم الفاتورة INV-2026-042 للعميل الجديد"
+        ],
+        "identifiers": [
+          "INV-2026-042"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "product-order",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "product-order",
+        "tags": [
+          "identifier",
+          "bidi"
+        ],
+        "pages": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+        "phrases": [
+          "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+        ],
+        "identifiers": [
+          "SKU-AB12",
+          "ORD-907"
+        ],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "two-digit-systems",
+      "tags": [
+        "digits",
+        "arabic-indic"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "two-digit-systems",
+        "tags": [
+          "digits",
+          "arabic-indic"
+        ],
+        "pages": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+        "phrases": [
+          "عدد الكتب 123 وعدد الأقلام ١٢٣"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "123",
+          "١٢٣"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "amount-date",
+      "tags": [
+        "decimal",
+        "date"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "amount-date",
+        "tags": [
+          "decimal",
+          "date"
+        ],
+        "pages": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+        "phrases": [
+          "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+        ],
+        "identifiers": [],
+        "numbers": [
+          "1250.75",
+          "2026-10-24"
+        ],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "paragraph-order",
+      "tags": [
+        "order",
+        "paragraphs"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "paragraph-order",
+        "tags": [
+          "order",
+          "paragraphs"
+        ],
+        "pages": [
+          "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم"
+        ],
+        "expected": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم",
+        "phrases": [
+          "الفقرة الأولى بداية الرحلة",
+          "الفقرة الثانية وصول القطار",
+          "الفقرة الثالثة نهاية اليوم"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    },
+    {
+      "id": "page-order",
+      "tags": [
+        "order",
+        "pages"
+      ],
+      "status": "PASS",
+      "expectations": {
+        "id": "page-order",
+        "tags": [
+          "order",
+          "pages"
+        ],
+        "pages": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "expected": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج",
+        "phrases": [
+          "الصفحة الأولى بدء العمل",
+          "الصفحة الثانية مراجعة النتائج"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": true,
+        "normalized": true,
+        "phrase_order": true,
+        "identifiers": true,
+        "numbers": true
+      },
+      "findings": [],
+      "differences": [],
+      "missing_content": []
+    }
+  ]
+}

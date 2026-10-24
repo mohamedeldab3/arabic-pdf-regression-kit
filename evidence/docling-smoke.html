@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><title>Arabic PDF regression report</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto;padding:0 20px;color:#172b3a;background:#f5f7fa}section{border-top:2px solid #b6c7d6;padding:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:16px;border:1px solid #dae1e8}h1,h2{color:#144b63}</style><h1>Arabic PDF regression report</h1><p>Independent synthetic corpus; not a general accuracy benchmark. Diff offsets refer to selected comparison text.</p><h2>Run metadata and reproduction argv</h2><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;kit_version&quot;: &quot;0.1.0&quot;,
+  &quot;timestamp_utc&quot;: &quot;2026-10-24T00:58:28.452302+00:00&quot;,
+  &quot;python&quot;: &quot;3.11.4&quot;,
+  &quot;platform&quot;: &quot;Windows-10-10.0.22621-SP0&quot;,
+  &quot;corpus_sha256&quot;: &quot;6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd&quot;,
+  &quot;engine&quot;: {
+    &quot;name&quot;: &quot;docling&quot;,
+    &quot;version&quot;: &quot;2.142.1&quot;,
+    &quot;model_environment&quot;: {
+      &quot;HF_HUB_OFFLINE&quot;: &quot;1&quot;
+    },
+    &quot;configuration&quot;: {
+      &quot;ocr&quot;: false,
+      &quot;device&quot;: &quot;cpu&quot;,
+      &quot;table_structure&quot;: false
+    }
+  },
+  &quot;reproduce_argv&quot;: [
+    &quot;arabic-pdf-kit&quot;,
+    &quot;run&quot;,
+    &quot;--engine&quot;,
+    &quot;docling&quot;,
+    &quot;--ids&quot;,
+    &quot;arabic-only&quot;,
+    &quot;--output&quot;,
+    &quot;evidence/docling-smoke.json&quot;,
+    &quot;--html&quot;,
+    &quot;evidence/docling-smoke.html&quot;
+  ],
+  &quot;exit_code&quot;: 2,
+  &quot;summary&quot;: {
+    &quot;PASS&quot;: 0,
+    &quot;FAIL&quot;: 0,
+    &quot;ERROR&quot;: 1,
+    &quot;SKIPPED&quot;: 0
+  }
+}</pre><section><h2>arabic-only: ERROR</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">تشرق الشمس فوق المدينة
+يقرأ الطفل كتابا جديدا</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: null,
+  &quot;identifiers&quot;: null,
+  &quot;numbers&quot;: null
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;error&quot;,
+      &quot;detail&quot;: &quot;IncompleteSnapshotError: The cached snapshot for &#x27;docling-project/docling-layout-heron&#x27; (revision &#x27;main&#x27;, commit 8f39ad3c0b4c58e9c2d2c84a38465abf757272d8) is incomplete: 1 file(s) are missing (model.safetensors). The Hub could not be reached (OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/docling-project/docling-layout-heron/revision/main: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Re-run the download with network access to complete the snapshot.&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;delete&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        45
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        0
+      ],
+      &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة يقرأ الطفل كتابا جديدا&quot;,
+      &quot;actual&quot;: &quot;&quot;
+    }
+  ],
+  &quot;missing_content&quot;: [
+    {
+      &quot;kind&quot;: &quot;delete&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        45
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        0
+      ],
+      &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة يقرأ الطفل كتابا جديدا&quot;,
+      &quot;actual&quot;: &quot;&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;arabic-only&quot;,
+  &quot;tags&quot;: [
+    &quot;arabic&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;,
+  &quot;phrases&quot;: [
+    &quot;تشرق الشمس فوق المدينة&quot;,
+    &quot;يقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section></html>

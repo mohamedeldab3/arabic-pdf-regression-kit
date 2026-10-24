@@ -9,8 +9,14 @@ Local delivery only: feature branch codex/arabic-pdf-regression-v01. No push,
 package publication, deployment, application or upstream messages were performed.
 Existing MIT license retained. No pre-existing implementation/uncommitted work.
 
-Real pypdf evidence is recorded; Docling verification and final checks are tracked
-in RESULTS.md. Hosted CI has not run because these changes are local.
+Real pypdf evidence is recorded (8 FAIL, no extraction errors). All 35 offline
+tests, lint, typing, build and the clean installed-wheel quickstart passed.
+Docling 2.142.1 was installed and attempted: layout weights could not be fully
+downloaded; explicit offline cache verification recorded 1 ERROR. See RESULTS.md
+for the exact artifact/revision, observed attempts and reproduction commands.
+No Docling Arabic accuracy result is claimed. Browser preview connection was also
+unavailable; PDF visual QA and HTML unit/CLI checks completed independently.
+Hosted CI has not run because these changes are local.
 
 To continue: read RESULTS.md first, reproduce the installed-wheel quickstart, then
 prioritize additional engine-version evidence and authorized real-world cases.
@@ -25,4 +31,5 @@ Public demonstration checklist:
 - [x] Test, typing, lint, packaging and clean-install verification tooling.
 - [x] Honest early-stage description and explicit limits.
 - [ ] Hosted CI execution and Linux/macOS verification.
+- [ ] Complete Docling extraction after public layout model weights are available.
 - [ ] Broader real-world corpus or demonstrated external adoption.

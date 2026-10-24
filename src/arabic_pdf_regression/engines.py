@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from importlib.metadata import PackageNotFoundError, version
+from os import environ
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -49,6 +50,8 @@ def metadata(engine: str) -> dict[str, Any]:
     except PackageNotFoundError:
         installed = None
     return {"name": engine, "version": installed,
+            "model_environment": {k: environ[k] for k in (
+                "HF_HUB_OFFLINE", "HF_HUB_DISABLE_XET", "HF_HUB_DOWNLOAD_TIMEOUT") if k in environ},
             "configuration": {"ocr": False, "device": "cpu", "table_structure": False}
             if engine == "docling" else {"extraction_mode": "plain", "ocr": False}}
 

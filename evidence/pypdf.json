@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
   "kit_version": "0.1.0",
-  "timestamp_utc": "2026-10-24T00:46:50.190549+00:00",
+  "timestamp_utc": "2026-10-24T00:54:37.563724+00:00",
   "python": "3.11.4",
   "platform": "Windows-10-10.0.22621-SP0",
   "corpus_sha256": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
   "engine": {
     "name": "pypdf",
     "version": "6.21.2",
+    "model_environment": {},
     "configuration": {
       "extraction_mode": "plain",
       "ocr": false
@@ -304,6 +305,7 @@
           "actual": "\u0006"
         }
       ],
+      "missing_content": [],
       "pdf_sha256": "698448e4c357af063a6a576c71fecb5cc66938b1e941cdd5e5d050b57053f290"
     },
     {
@@ -442,6 +444,60 @@
           "actual": "ع'ن"
         }
       ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            1,
+            6
+          ],
+          "actual_span": [
+            13,
+            13
+          ],
+          "expected": "ذا تق",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            7,
+            25
+          ],
+          "actual_span": [
+            14,
+            15
+          ],
+          "expected": "ير عن Python ومكتب",
+          "actual": "\u0002"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            39,
+            40
+          ],
+          "actual_span": [
+            29,
+            59
+          ],
+          "expected": "ف",
+          "actual": "‪‬ ومك ت\u001bب\u0019ةPython ه+ذا )ت\u0007قر)"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            42,
+            49
+          ],
+          "actual_span": [
+            62,
+            65
+          ],
+          "expected": "القاهرة",
+          "actual": "ع'ن"
+        }
+      ],
       "pdf_sha256": "40ce21f22be25746fa665250bcc5005d507102a37cced69782c54b2c084a31c7"
     },
     {
@@ -518,6 +574,73 @@
           ],
           "expected": "",
           "actual": " يل"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            6,
+            12
+          ],
+          "actual_span": [
+            13,
+            19
+          ],
+          "expected": "فاتورة",
+          "actual": "\u0005جد\u0003يد"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            26,
+            29
+          ],
+          "actual_span": [
+            33,
+            36
+          ],
+          "expected": "للع",
+          "actual": "ر\"ق"
+        },
+        {
+          "kind": "delete",
+          "expected_span": [
+            30,
+            32
+          ],
+          "actual_span": [
+            37,
+            37
+          ],
+          "expected": "يل",
+          "actual": ""
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            35,
+            39
+          ],
+          "actual_span": [
+            40,
+            49
+          ],
+          "expected": "جديد",
+          "actual": " فا\u0003تور\u0018ة"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            2
+          ],
+          "actual_span": [
+            0,
+            6
+          ],
+          "expected": "رق",
+          "actual": "‪‬ للع"
         },
         {
           "kind": "replace",
@@ -716,6 +839,86 @@
           "actual": "ت ج"
         }
       ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            1
+          ],
+          "actual_span": [
+            0,
+            15
+          ],
+          "expected": "ت",
+          "actual": "‬‪ORD-907 ‪‬ \u0014ض"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            2,
+            5
+          ],
+          "actual_span": [
+            16,
+            17
+          ],
+          "expected": " شح",
+          "actual": "\u0011"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            9,
+            13
+          ],
+          "actual_span": [
+            21,
+            25
+          ],
+          "expected": "منتج",
+          "actual": "طل ب"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            23,
+            24
+          ],
+          "actual_span": [
+            35,
+            37
+          ],
+          "expected": "ض",
+          "actual": "&ت"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            29,
+            32
+          ],
+          "actual_span": [
+            47,
+            50
+          ],
+          "expected": "طلب",
+          "actual": "م!ن"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            33,
+            40
+          ],
+          "actual_span": [
+            51,
+            54
+          ],
+          "expected": "ORD-907",
+          "actual": "ت ج"
+        }
+      ],
       "pdf_sha256": "f8fdc9a2a43b606744921abfe5b84e20842b099829dbeb25752a380dd29ae40b"
     },
     {
@@ -852,6 +1055,47 @@
           "actual": "عدد الك\u0019ت\u0017ب"
         }
       ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            3
+          ],
+          "actual_span": [
+            0,
+            5
+          ],
+          "expected": "عدد",
+          "actual": "‬‪١٢٣"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            4,
+            13
+          ],
+          "actual_span": [
+            6,
+            8
+          ],
+          "expected": "الكتب 123",
+          "actual": "‪‬"
+        },
+        {
+          "kind": "replace",
+          "expected_span": [
+            27,
+            30
+          ],
+          "actual_span": [
+            27,
+            38
+          ],
+          "expected": "١٢٣",
+          "actual": "عدد الك\u0019ت\u0017ب"
+        }
+      ],
       "pdf_sha256": "64681858ee4908814783d3aa0e5df0f62643603702a3e9a509deda5fe5ec2870"
     },
     {
@@ -929,6 +1173,21 @@
           ],
           "expected": "",
           "actual": " ‪‬ \u0017ج\u0015ن\u0010يه \u0012ب\u0010تار ي خ 1250.75 الم\u0015بل غ"
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "replace",
+          "expected_span": [
+            0,
+            27
+          ],
+          "actual_span": [
+            0,
+            2
+          ],
+          "expected": "المبلغ 1250.75 جنيه بتاريخ ",
+          "actual": "‬‪"
         }
       ],
       "pdf_sha256": "f51357bed02fc666650a32502b055d12cfc91b46e5af8ee27b3e66533f06a411"
@@ -1305,6 +1564,7 @@
           "actual": " "
         }
       ],
+      "missing_content": [],
       "pdf_sha256": "a854b9b04e856330d4cbb9d5bad3dc99abb912e8439fc299aa6ef0e014364559"
     },
     {
@@ -1557,6 +1817,7 @@
           "actual": "\u0016"
         }
       ],
+      "missing_content": [],
       "pdf_sha256": "cbfc3842bf0701c93eb612346e1050c5b706a5eb60e150b324f8012e9becced9"
     }
   ]

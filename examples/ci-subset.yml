@@ -1,0 +1,17 @@
+# Copy into another project's .github/workflows after vendoring:
+# vendor/arabic_pdf_regression_kit-0.1.0-py3-none-any.whl
+# examples/run_subset.py and evidence/pypdf.json from this tested revision.
+name: arabic-pdf-subset
+on: [push, pull_request]
+jobs:
+  regression-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install vendor/arabic_pdf_regression_kit-0.1.0-py3-none-any.whl pypdf==6.21.2
+      - run: python examples/run_subset.py
+      # Exit 0 means no new per-check regressions against the recorded baseline.
+      # The three existing extraction FAIL observations remain in tmp/subset.json.

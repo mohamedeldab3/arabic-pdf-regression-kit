@@ -13,7 +13,7 @@ license-files = ["LICENSE"]
 dependencies = []
 
 [project.optional-dependencies]
-fixtures = ["fpdf2==2.8.9", "uharfbuzz==0.57.0"]
+fixtures = ["fpdf2==2.8.9", "uharfbuzz==0.57.0", "fonttools==4.67.0"]
 pypdf = ["pypdf==6.21.2"]
 docling = ["docling==2.142.1"]
 dev = ["pytest>=8", "ruff", "mypy", "build"]

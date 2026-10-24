@@ -78,6 +78,16 @@ def test_html_escapes_every_untrusted_surface():
     assert "&lt;img" in html and "&lt;script&gt;" in html
 
 
+def test_raw_controls_are_visible_without_modifying_saved_text():
+    value = control()
+    value["outputs"]["arabic-only"]["raw"] = "نص\x06\r\n "
+    run = saved_outputs(value, "strict", ["test"])
+    html = render(run)
+    assert run["results"][0]["raw"] == "نص\x06\r\n "
+    assert "\\u0006\\r\\n " in html
+    assert "\x06" not in html
+
+
 @pytest.mark.parametrize("value", [[], {"schema_version": 9}, {"schema_version": 1, "outputs": {"unknown": {}}}])
 def test_bad_input_exits_two(tmp_path, value):
     path = tmp_path / "bad.json"

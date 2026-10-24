@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "kit_version": "0.1.0",
+  "timestamp_utc": "2026-10-24T00:58:28.452302+00:00",
+  "python": "3.11.4",
+  "platform": "Windows-10-10.0.22621-SP0",
+  "corpus_sha256": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
+  "engine": {
+    "name": "docling",
+    "version": "2.142.1",
+    "model_environment": {
+      "HF_HUB_OFFLINE": "1"
+    },
+    "configuration": {
+      "ocr": false,
+      "device": "cpu",
+      "table_structure": false
+    }
+  },
+  "reproduce_argv": [
+    "arabic-pdf-kit",
+    "run",
+    "--engine",
+    "docling",
+    "--ids",
+    "arabic-only",
+    "--output",
+    "evidence/docling-smoke.json",
+    "--html",
+    "evidence/docling-smoke.html"
+  ],
+  "exit_code": 2,
+  "summary": {
+    "PASS": 0,
+    "FAIL": 0,
+    "ERROR": 1,
+    "SKIPPED": 0
+  },
+  "results": [
+    {
+      "id": "arabic-only",
+      "tags": [
+        "arabic"
+      ],
+      "status": "ERROR",
+      "expectations": {
+        "id": "arabic-only",
+        "tags": [
+          "arabic"
+        ],
+        "pages": [
+          "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا"
+        ],
+        "expected": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+        "phrases": [
+          "تشرق الشمس فوق المدينة",
+          "يقرأ الطفل كتابا جديدا"
+        ],
+        "identifiers": [],
+        "numbers": [],
+        "provenance": "Original synthetic content authored for this project; no issue attachments",
+        "license": "MIT",
+        "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+      },
+      "raw": "",
+      "mode": "nfc-whitespace",
+      "checks": {
+        "strict": false,
+        "normalized": false,
+        "phrase_order": null,
+        "identifiers": null,
+        "numbers": null
+      },
+      "findings": [
+        {
+          "kind": "error",
+          "detail": "IncompleteSnapshotError: The cached snapshot for 'docling-project/docling-layout-heron' (revision 'main', commit 8f39ad3c0b4c58e9c2d2c84a38465abf757272d8) is incomplete: 1 file(s) are missing (model.safetensors). The Hub could not be reached (OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/docling-project/docling-layout-heron/revision/main: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Re-run the download with network access to complete the snapshot."
+        }
+      ],
+      "differences": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            45
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "تشرق الشمس فوق المدينة يقرأ الطفل كتابا جديدا",
+          "actual": ""
+        }
+      ],
+      "missing_content": [
+        {
+          "kind": "delete",
+          "expected_span": [
+            0,
+            45
+          ],
+          "actual_span": [
+            0,
+            0
+          ],
+          "expected": "تشرق الشمس فوق المدينة يقرأ الطفل كتابا جديدا",
+          "actual": ""
+        }
+      ],
+      "pdf_sha256": "698448e4c357af063a6a576c71fecb5cc66938b1e941cdd5e5d050b57053f290"
+    }
+  ]
+}

@@ -69,6 +69,9 @@ its exit code describes rendering, and the original run exit is visible inside i
   and character-offset differences are distinct diagnostics. Offsets refer to the
   selected comparison strings, not PDF geometry or necessarily the raw string.
 
+HTML shows raw output in JSON string notation so control characters, carriage
+returns and trailing whitespace remain visible. The JSON run retains exact raw text.
+
 No reversal, reshaping, word sorting, bidi-control removal or punctuation deletion
 is applied to engine output. Raw extraction is preserved. Comparisons require the
 same corpus, PDF hashes, expectation set and comparison mode. They report each
@@ -91,6 +94,10 @@ See [results and blockers](docs/RESULTS.md) for the actual run, separately from
 synthetic evaluator tests. We do not claim the historical issue examples have
 been reproduced or fixed.
 
+Current local Docling evidence is **1 ERROR**: public layout weights did not
+finish downloading, and an explicit offline cache check confirmed the missing
+model.safetensors. No Docling Arabic quality score is available.
+
 ## Development and CI integration
 
 ```sh
@@ -109,6 +116,8 @@ another project, vendor the built `arabic_pdf_regression_kit-0.1.0-py3-none-any.
 the example and its baseline, then install that exact wheel plus `pypdf==6.21.2`.
 No PyPI release currently exists. A package-name-only install is not a supported
 installation instruction for this unpublished project.
+Copy [this workflow example](examples/ci-subset.yml) into a downstream project
+after vendoring the wheel, subset script and baseline as listed in its header.
 
 Clean-wheel verification (Windows; use `.venv-clean/bin/python` on Unix):
 

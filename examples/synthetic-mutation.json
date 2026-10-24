@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "engine": {
+    "name": "synthetic-reversed-words",
+    "version": "1",
+    "configuration": {
+      "purpose": "Deliberate mutation; NOT an observed engine failure"
+    }
+  },
+  "outputs": {
+    "arabic-only": {
+      "raw": "جديدا كتابا الطفل يقرأ المدينة فوق الشمس تشرق"
+    },
+    "mixed-paragraph": {
+      "raw": "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+    },
+    "invoice-id": {
+      "raw": "رقم الفاتورة INV-2026-042 للعميل الجديد"
+    },
+    "product-order": {
+      "raw": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+    },
+    "two-digit-systems": {
+      "raw": "عدد الكتب 123 وعدد الأقلام ١٢٣"
+    },
+    "amount-date": {
+      "raw": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+    },
+    "paragraph-order": {
+      "raw": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم"
+    },
+    "page-order": {
+      "raw": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج"
+    }
+  }
+}

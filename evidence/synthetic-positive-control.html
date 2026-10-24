@@ -1,0 +1,281 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><title>Arabic PDF regression report</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto;padding:0 20px;color:#172b3a;background:#f5f7fa}section{border-top:2px solid #b6c7d6;padding:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:16px;border:1px solid #dae1e8}h1,h2{color:#144b63}</style><h1>Arabic PDF regression report</h1><p>Independent synthetic corpus; not a general accuracy benchmark. Diff offsets refer to selected comparison text.</p><h2>Run metadata and reproduction argv</h2><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;kit_version&quot;: &quot;0.1.0&quot;,
+  &quot;timestamp_utc&quot;: &quot;2026-10-24T00:54:37.948511+00:00&quot;,
+  &quot;python&quot;: &quot;3.11.4&quot;,
+  &quot;platform&quot;: &quot;Windows-10-10.0.22621-SP0&quot;,
+  &quot;corpus_sha256&quot;: &quot;6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd&quot;,
+  &quot;engine&quot;: {
+    &quot;name&quot;: &quot;synthetic-positive-control&quot;,
+    &quot;version&quot;: &quot;1&quot;,
+    &quot;configuration&quot;: {
+      &quot;purpose&quot;: &quot;Authored logical text; NOT an engine benchmark&quot;
+    }
+  },
+  &quot;reproduce_argv&quot;: [
+    &quot;arabic-pdf-kit&quot;,
+    &quot;evaluate&quot;,
+    &quot;examples/positive-control.json&quot;,
+    &quot;--output&quot;,
+    &quot;evidence/synthetic-positive-control.json&quot;,
+    &quot;--html&quot;,
+    &quot;evidence/synthetic-positive-control.html&quot;
+  ],
+  &quot;exit_code&quot;: 0,
+  &quot;summary&quot;: {
+    &quot;PASS&quot;: 8,
+    &quot;FAIL&quot;: 0,
+    &quot;ERROR&quot;: 0,
+    &quot;SKIPPED&quot;: 0
+  }
+}</pre><section><h2>arabic-only: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">تشرق الشمس فوق المدينة
+يقرأ الطفل كتابا جديدا</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;arabic-only&quot;,
+  &quot;tags&quot;: [
+    &quot;arabic&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;,
+  &quot;phrases&quot;: [
+    &quot;تشرق الشمس فوق المدينة&quot;,
+    &quot;يقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>mixed-paragraph: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">هذا تقرير عن Python ومكتبة Open Source في القاهرة</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;mixed-paragraph&quot;,
+  &quot;tags&quot;: [
+    &quot;arabic&quot;,
+    &quot;english&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;
+  ],
+  &quot;expected&quot;: &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;,
+  &quot;phrases&quot;: [
+    &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;Python&quot;,
+    &quot;Open Source&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>invoice-id: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">رقم الفاتورة INV-2026-042 للعميل الجديد</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;invoice-id&quot;,
+  &quot;tags&quot;: [
+    &quot;identifier&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;
+  ],
+  &quot;expected&quot;: &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;,
+  &quot;phrases&quot;: [
+    &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;INV-2026-042&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>product-order: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;product-order&quot;,
+  &quot;tags&quot;: [
+    &quot;identifier&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;
+  ],
+  &quot;expected&quot;: &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;,
+  &quot;phrases&quot;: [
+    &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;SKU-AB12&quot;,
+    &quot;ORD-907&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>two-digit-systems: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">عدد الكتب 123 وعدد الأقلام ١٢٣</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;two-digit-systems&quot;,
+  &quot;tags&quot;: [
+    &quot;digits&quot;,
+    &quot;arabic-indic&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;
+  ],
+  &quot;expected&quot;: &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;,
+  &quot;phrases&quot;: [
+    &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [
+    &quot;123&quot;,
+    &quot;١٢٣&quot;
+  ],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>amount-date: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">المبلغ 1250.75 جنيه بتاريخ 2026-10-24</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;amount-date&quot;,
+  &quot;tags&quot;: [
+    &quot;decimal&quot;,
+    &quot;date&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;
+  ],
+  &quot;expected&quot;: &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;,
+  &quot;phrases&quot;: [
+    &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [
+    &quot;1250.75&quot;,
+    &quot;2026-10-24&quot;
+  ],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>paragraph-order: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">الفقرة الأولى بداية الرحلة
+
+الفقرة الثانية وصول القطار
+
+الفقرة الثالثة نهاية اليوم</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;paragraph-order&quot;,
+  &quot;tags&quot;: [
+    &quot;order&quot;,
+    &quot;paragraphs&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم&quot;
+  ],
+  &quot;expected&quot;: &quot;الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم&quot;,
+  &quot;phrases&quot;: [
+    &quot;الفقرة الأولى بداية الرحلة&quot;,
+    &quot;الفقرة الثانية وصول القطار&quot;,
+    &quot;الفقرة الثالثة نهاية اليوم&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>page-order: PASS</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">الصفحة الأولى بدء العمل
+
+الصفحة الثانية مراجعة النتائج</pre><h3>Raw extraction (JSON string notation)</h3><pre dir="auto">&quot;الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج&quot;</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: true,
+  &quot;normalized&quot;: true,
+  &quot;phrase_order&quot;: true,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [],
+  &quot;differences&quot;: [],
+  &quot;missing_content&quot;: []
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;page-order&quot;,
+  &quot;tags&quot;: [
+    &quot;order&quot;,
+    &quot;pages&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;الصفحة الأولى بدء العمل&quot;,
+    &quot;الصفحة الثانية مراجعة النتائج&quot;
+  ],
+  &quot;expected&quot;: &quot;الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج&quot;,
+  &quot;phrases&quot;: [
+    &quot;الصفحة الأولى بدء العمل&quot;,
+    &quot;الصفحة الثانية مراجعة النتائج&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section></html>

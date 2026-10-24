@@ -3,6 +3,7 @@
   "before_engine": {
     "name": "pypdf",
     "version": "6.21.2",
+    "model_environment": {},
     "configuration": {
       "extraction_mode": "plain",
       "ocr": false
@@ -11,6 +12,7 @@
   "after_engine": {
     "name": "pypdf",
     "version": "6.21.2",
+    "model_environment": {},
     "configuration": {
       "extraction_mode": "plain",
       "ocr": false
