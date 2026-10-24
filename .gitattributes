@@ -1,0 +1,3 @@
+src/arabic_pdf_regression/data/** -text
+*.pdf binary
+*.ttf binary
