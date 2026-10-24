@@ -57,6 +57,8 @@ def test_numeric_boundaries_and_paragraph_order():
     assert not token_present("123", "91234")
     assert not token_present("1250.75", "1250.750")
     assert not token_present("123", "123.45")
+    assert not token_present("123", "9.123")
+    assert not token_present("INV-1", "X-INV-1")
     assert token_present("١٢٣", "عدد ١٢٣،")
     fixture = load_corpus()[-1]
     assert not evaluate(fixture, "\n\n".join(fixture["pages"][::-1]))["checks"]["phrase_order"]

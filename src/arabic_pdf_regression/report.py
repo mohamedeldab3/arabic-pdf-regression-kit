@@ -7,7 +7,37 @@ import json
 from typing import Any
 
 
+def validate(run: dict[str, Any]) -> None:
+    if run.get("schema_version") != 1 or not isinstance(run.get("results"), list):
+        raise ValueError("Expected version 1 recorded run")
+    if not isinstance(run.get("corpus_sha256"), str) or not isinstance(run.get("engine"), dict):
+        raise ValueError("Missing run provenance")
+    ids = []
+    for row in run["results"]:
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str):
+            raise ValueError("Invalid fixture result")
+        ids.append(row["id"])
+        if row.get("status") not in ("PASS", "FAIL", "ERROR", "SKIPPED"):
+            raise ValueError("Invalid extraction status")
+        if row.get("mode") not in ("strict", "nfc", "nfc-whitespace"):
+            raise ValueError("Invalid comparison mode")
+        if not isinstance(row.get("raw"), str) or not isinstance(row.get("expectations"), dict):
+            raise ValueError("Invalid result text/expectations")
+        if not isinstance(row["expectations"].get("expected"), str):
+            raise ValueError("Missing expected text")
+        checks = row.get("checks")
+        if not isinstance(checks, dict) or set(checks) != {"strict", "normalized", "phrase_order", "identifiers", "numbers"}:
+            raise ValueError("Invalid result checks")
+        if any(value is not None and type(value) is not bool for value in checks.values()):
+            raise ValueError("Invalid check values")
+        if not isinstance(row.get("findings"), list) or not isinstance(row.get("differences"), list):
+            raise ValueError("Invalid findings/differences")
+    if not ids or len(ids) != len(set(ids)):
+        raise ValueError("Empty or duplicate result IDs")
+
+
 def render(run: dict[str, Any]) -> str:
+    validate(run)
     def esc(value: Any) -> str:
         return html.escape(str(value), quote=True)
 
@@ -20,7 +50,7 @@ def render(run: dict[str, Any]) -> str:
             f'<h3>Raw extraction</h3><pre dir="auto">{esc(row["raw"])}</pre>'
             f'<h3>Checks</h3><pre>{esc(json.dumps(row["checks"], indent=2))}</pre>'
             f'<h3>Findings and differences</h3><pre dir="auto">'
-            f'{esc(json.dumps({"findings": row["findings"], "differences": row["differences"]}, ensure_ascii=False, indent=2))}'
+            f'{esc(json.dumps({"findings": row["findings"], "differences": row["differences"], "missing_content": row.get("missing_content", [])}, ensure_ascii=False, indent=2))}'
             f'</pre><details><summary>Full fixture expectations</summary><pre dir="auto">'
             f'{esc(json.dumps(row["expectations"], ensure_ascii=False, indent=2))}'
             '</pre></details></section>'
@@ -40,6 +70,8 @@ def render(run: dict[str, Any]) -> str:
 
 
 def compare(before: dict[str, Any], after: dict[str, Any]) -> dict[str, Any]:
+    validate(before)
+    validate(after)
     if before["corpus_sha256"] != after["corpus_sha256"]:
         raise ValueError("Cannot compare different corpus ground truth")
     old = {r["id"]: r for r in before["results"]}

@@ -87,3 +87,12 @@ def test_bad_input_exits_two(tmp_path, value):
 
 def test_unknown_fixture_ids_are_errors(tmp_path):
     assert main(["run", "--engine", "pypdf", "--ids", "unknown", "--output", str(tmp_path / "r.json")]) == 2
+
+
+@pytest.mark.parametrize("changes", [{"results": []}, {"results": [42]}, {"schema_version": 2}])
+def test_invalid_recorded_run_is_input_error(tmp_path, changes):
+    value = saved_outputs(control(), "strict", ["test"])
+    value.update(changes)
+    path = tmp_path / "bad-run.json"
+    path.write_text(json.dumps(value), encoding="utf-8")
+    assert main(["report", str(path), "--html", str(tmp_path / "out.html")]) == 2

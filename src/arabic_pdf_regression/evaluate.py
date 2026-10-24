@@ -22,7 +22,7 @@ def normalize(text: str, mode: str) -> str:
 def token_present(token: str, text: str) -> bool:
     # Unicode word boundaries prevent 123 passing inside 91234 or ID-1 in ID-12.
     # Adjacent punctuation is allowed; a digit after decimal/date separators is not.
-    pattern = r"(?<![\w])" + re.escape(token) + r"(?![\w]|[.,/-]\d)"
+    pattern = r"(?<![\w-])(?<!\d[.,/])" + re.escape(token) + r"(?![\w-]|[.,/]\d)"
     return re.search(pattern, text) is not None
 
 
@@ -68,9 +68,11 @@ def evaluate(fixture: dict[str, Any], raw: str = "", *, mode: str = "nfc-whitesp
         for tag, i, j, a, b in SequenceMatcher(None, target, actual, autojunk=False).get_opcodes()
         if tag != "equal"
     ]
+    missing_content = [d for d in differences
+                       if d["kind"] in ("delete", "replace") and str(d["expected"]).strip()]
     return {"id": fixture["id"], "tags": fixture["tags"], "status": status,
             "expectations": fixture, "raw": raw, "mode": mode, "checks": checks,
-            "findings": findings, "differences": differences}
+            "findings": findings, "differences": differences, "missing_content": missing_content}
 
 
 def exit_code(results: list[dict[str, Any]]) -> int:
