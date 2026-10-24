@@ -7,10 +7,11 @@
 - Offline mutation/positive controls, packaging and CI configuration.
 - Actual Docling extraction and pypdf 6.21.1/6.21.2 version-comparison evidence.
 - Hosted Windows/Ubuntu matrix verification and prepared maintainer documentation.
+- Recorded-run count/exit-code validation and Arabic numeric-boundary maintenance fixes.
 
 ## Next evidence and usability work
 - Reproduce extraction on macOS and additional pinned engine versions.
-- Add structured run-schema validation and richer missing-content diagnostics.
+- Extend schema validation to additional row semantics and richer missing-content diagnostics.
 - Add an authorized real-world reproducer when one is available.
 - Audit deterministic PDF byte reproduction across pinned fonttools versions.
 

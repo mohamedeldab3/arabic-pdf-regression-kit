@@ -8,6 +8,7 @@ import json
 from importlib.metadata import version
 from pathlib import Path
 
+from arabic_pdf_regression.evaluate import exit_code
 from arabic_pdf_regression.report import compare
 from arabic_pdf_regression.runs import run, write_json
 
@@ -16,6 +17,9 @@ if version("arabic-pdf-regression-kit") != "0.1.0" or version("pypdf") != "6.21.
 ids = ["arabic-only", "invoice-id", "amount-date"]
 baseline = json.loads(Path("evidence/pypdf.json").read_text(encoding="utf-8"))
 baseline["results"] = [r for r in baseline["results"] if r["id"] in ids]
+baseline["summary"] = {status: sum(r["status"] == status for r in baseline["results"])
+                       for status in ("PASS", "FAIL", "ERROR", "SKIPPED")}
+baseline["exit_code"] = exit_code(baseline["results"])
 current = run("pypdf", "nfc-whitespace", ids, ["python", "examples/run_subset.py"])
 write_json(Path("tmp/subset.json"), current)
 comparison = compare(baseline, current)

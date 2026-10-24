@@ -6,6 +6,7 @@ import pytest
 from arabic_pdf_regression.cli import main, saved_outputs
 from arabic_pdf_regression.corpus import load_corpus
 from arabic_pdf_regression.report import compare, render
+from arabic_pdf_regression.runs import envelope
 
 
 def control():
@@ -54,10 +55,11 @@ def test_compare_both_directions_and_within_failures(tmp_path):
 
 def test_incomparable_errors_modes_and_removed_fixtures():
     good = saved_outputs(control(), "strict", ["test"])
-    changed = copy.deepcopy(good)
-    changed["results"][0]["status"] = "ERROR"
+    error_output = control()
+    error_output["outputs"]["arabic-only"] = {"error": "synthetic engine error"}
+    changed = saved_outputs(error_output, "strict", ["test"])
     assert compare(good, changed)["exit_code"] == 2
-    changed["results"].pop(0)
+    changed = envelope(changed["results"][1:], changed["engine"], ["test"])
     assert compare(good, changed)["exit_code"] == 2
     changed = copy.deepcopy(good)
     changed["results"][0]["mode"] = "nfc"

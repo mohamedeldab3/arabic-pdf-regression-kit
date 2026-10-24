@@ -12,7 +12,10 @@ were performed.
 Existing MIT license retained. No pre-existing implementation/uncommitted work.
 
 Real pypdf evidence is recorded (8 FAIL, no extraction errors). All 35 offline
-tests, lint, typing, build and the clean installed-wheel quickstart passed.
+tests at the initial release passed. The internal maintenance audit expanded the
+suite to 54 passing tests and fixed numeric boundaries and run-metadata consistency;
+see MAINTENANCE_LOG.md. Lint, typing, build and installed-wheel checks are included
+in verification.
 Docling 2.142.1 completed all eight fixtures: 0 PASS, 8 FAIL, 0 ERROR, 0 SKIPPED.
 The layout-model download was recovered and SHA-256 verified. pypdf 6.21.1 and
 6.21.2 were both measured; their per-check comparison found no changes.

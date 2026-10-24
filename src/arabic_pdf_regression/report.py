@@ -6,12 +6,22 @@ import html
 import json
 from typing import Any
 
+from .evaluate import exit_code
+
+
+def validate_engine(engine: Any) -> None:
+    if not isinstance(engine, dict) or not isinstance(engine.get("name"), str) or not engine["name"].strip():
+        raise ValueError("Engine metadata requires a non-empty name")
+    if engine.get("version") is not None and not isinstance(engine["version"], str):
+        raise ValueError("Engine version must be a string or null")
+
 
 def validate(run: dict[str, Any]) -> None:
-    if run.get("schema_version") != 1 or not isinstance(run.get("results"), list):
+    if type(run.get("schema_version")) is not int or run["schema_version"] != 1 or not isinstance(run.get("results"), list):
         raise ValueError("Expected version 1 recorded run")
     if not isinstance(run.get("corpus_sha256"), str) or not isinstance(run.get("engine"), dict):
         raise ValueError("Missing run provenance")
+    validate_engine(run["engine"])
     ids = []
     for row in run["results"]:
         if not isinstance(row, dict) or not isinstance(row.get("id"), str):
@@ -34,6 +44,15 @@ def validate(run: dict[str, Any]) -> None:
             raise ValueError("Invalid findings/differences")
     if not ids or len(ids) != len(set(ids)):
         raise ValueError("Empty or duplicate result IDs")
+    expected_summary = {status: sum(row["status"] == status for row in run["results"])
+                        for status in ("PASS", "FAIL", "ERROR", "SKIPPED")}
+    summary = run.get("summary")
+    if (not isinstance(summary, dict) or set(summary) != set(expected_summary)
+            or any(type(value) is not int or value < 0 for value in summary.values())
+            or summary != expected_summary):
+        raise ValueError("Run summary does not match fixture statuses")
+    if type(run.get("exit_code")) is not int or run["exit_code"] != exit_code(run["results"]):
+        raise ValueError("Run exit code does not match fixture statuses")
 
 
 def render(run: dict[str, Any]) -> str:

@@ -50,6 +50,7 @@ official form if requested; do not commit account identifiers or credentials.
 - [Public CI runs](https://github.com/mohamedeldab3/arabic-pdf-regression-kit/actions)
 - [Maintenance history](https://github.com/mohamedeldab3/arabic-pdf-regression-kit/commits/main/)
 - [Six-month maintenance plan](MAINTENANCE_PLAN.md)
+- [Reproduced internal findings and fixes](MAINTENANCE_LOG.md)
 
 ## Before submitting
 

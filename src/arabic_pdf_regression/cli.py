@@ -10,7 +10,7 @@ from typing import Any
 
 from .corpus import generate, load_corpus, verify
 from .evaluate import MODES, evaluate
-from .report import compare, render
+from .report import compare, render, validate_engine
 from .runs import envelope, run, write_json
 
 
@@ -22,8 +22,10 @@ def read_json(path: Path) -> dict[str, Any]:
 
 
 def saved_outputs(value: dict[str, Any], mode: str, command: list[str]) -> dict[str, Any]:
-    if value.get("schema_version") != 1 or not isinstance(value.get("outputs"), dict):
+    if type(value.get("schema_version")) is not int or value["schema_version"] != 1 or not isinstance(value.get("outputs"), dict):
         raise ValueError("Expected schema_version=1 and outputs mapping")
+    engine = value.get("engine", {"name": "saved-output", "version": None})
+    validate_engine(engine)
     fixtures = load_corpus()
     unknown = set(value["outputs"]) - {f["id"] for f in fixtures}
     if unknown:
@@ -41,7 +43,6 @@ def saved_outputs(value: dict[str, Any], mode: str, command: list[str]) -> dict[
                 raise ValueError("error must be a non-empty string")
             result = evaluate(fixture, item.get("raw", ""), mode=mode, error=error)
         results.append(result)
-    engine = value.get("engine", {"name": "saved-output", "version": None})
     return envelope(results, engine, command)
 
 

@@ -15,6 +15,11 @@ and compares upgrade behavior. Core CI has passed on Windows and Ubuntu with
 Python 3.11 and 3.12. [Results](docs/RESULTS.md) · [Changelog](CHANGELOG.md) ·
 [Contributing](CONTRIBUTING.md).
 
+Recent maintenance: [internal audit and reproduced fixes](docs/MAINTENANCE_LOG.md)
+cover Arabic numeric boundaries and inconsistent saved-run metadata. The current
+offline suite contains 54 passing tests; the log separates internal reproductions
+from any external feedback.
+
 ## Quickstart (Python 3.11+)
 
 From this source checkout, create and activate a virtual environment:
@@ -87,6 +92,11 @@ same corpus, PDF hashes, expectation set and comparison mode. They report each
 check's regressions/improvements, even if both overall fixture statuses remain
 FAIL. ERROR/SKIPPED and differing fixture sets are incomparable (exit 2).
 Comparison does not claim statistical significance or compare general accuracy.
+
+Recorded-run imports reject summaries or exit codes that contradict fixture
+statuses. Saved engine metadata requires a non-empty name and a string/null version.
+When deriving a fixture subset, recalculate its summary and exit code as shown in
+the subset example; editing result rows alone produces an invalid artifact.
 
 ## Docling: optional real integration
 

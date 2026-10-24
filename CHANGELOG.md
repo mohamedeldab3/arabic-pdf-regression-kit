@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Fix false-positive numeric-token checks around Arabic decimal/thousands separators.
+- Reject inconsistent recorded-run summaries/exit codes and invalid engine metadata.
+- Keep subset CI baselines consistent after selecting fixture rows.
+- Add 19 internal-audit regression cases and documented before/after evidence.
+
 ## 0.1.0 - 2026-10-24
 
 - Eight original Arabic/mixed-language text-layer fixtures with independent logical

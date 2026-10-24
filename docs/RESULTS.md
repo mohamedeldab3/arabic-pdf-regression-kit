@@ -6,6 +6,13 @@ reproduce any particular upstream issue attachment.
 
 ## Current measured summary
 
+Latest internal maintenance verification: 54 offline tests passed after fixing
+Arabic numeric-token boundaries and validating recorded summary/exit consistency.
+The 19 new cases failed before their fixes and passed afterward. All 24 existing
+measured engine fixture statuses/checks remained unchanged when re-evaluated.
+See [maintenance log](MAINTENANCE_LOG.md) and its machine-readable evidence.
+This is an internal audit, not an external user report or additional engine run.
+
 | Real extraction run | PASS | FAIL | ERROR | SKIPPED |
 | --- | --- | --- | --- | --- |
 | Docling 2.142.1, complete cached model, CPU/OCR off | 0 | 8 | 0 | 0 |

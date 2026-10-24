@@ -1,0 +1,59 @@
+{
+  "source": "internal maintainer audit; not an external user complaint",
+  "base_commit": "c68115684468c205e2b05e75a98a3927b984bfcf",
+  "numeric_boundary_mutations": [
+    {
+      "token": "123",
+      "synthetic_raw": "٩٬123",
+      "before_token_present": true,
+      "after_token_present": false
+    },
+    {
+      "token": "١٢٣",
+      "synthetic_raw": "١٢٣٫٤",
+      "before_token_present": true,
+      "after_token_present": false
+    },
+    {
+      "token": "1250.75",
+      "synthetic_raw": "1250.75٫9",
+      "before_token_present": true,
+      "after_token_present": false
+    },
+    {
+      "token": "123",
+      "synthetic_raw": "123٬٤٥٦",
+      "before_token_present": true,
+      "after_token_present": false
+    },
+    {
+      "token": "123",
+      "synthetic_raw": "٩٫123",
+      "before_token_present": true,
+      "after_token_present": false
+    },
+    {
+      "token": "١٢٣",
+      "synthetic_raw": "٤٬١٢٣",
+      "before_token_present": true,
+      "after_token_present": false
+    }
+  ],
+  "inconsistent_summary": {
+    "before_accepted": true,
+    "after": "rejected: ValueError"
+  },
+  "targeted_tests_before": {
+    "failed": 19,
+    "passed": 0
+  },
+  "targeted_tests_after": {
+    "failed": 0,
+    "passed": 19
+  },
+  "full_suite_after": {
+    "failed": 0,
+    "passed": 54
+  },
+  "prior_real_engine_fixture_results_unchanged": 24
+}

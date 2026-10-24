@@ -21,8 +21,10 @@ def normalize(text: str, mode: str) -> str:
 
 def token_present(token: str, text: str) -> bool:
     # Unicode word boundaries prevent 123 passing inside 91234 or ID-1 in ID-12.
-    # Adjacent punctuation is allowed; a digit after decimal/date separators is not.
-    pattern = r"(?<![\w-])(?<!\d[.,/])" + re.escape(token) + r"(?![\w-]|[.,/]\d)"
+    # Include Arabic decimal/thousands separators; Arabic comma remains punctuation.
+    separators = ".,/\u066b\u066c"
+    pattern = (rf"(?<![\w-])(?<!\d[{separators}])" + re.escape(token)
+               + rf"(?![\w-]|[{separators}]\d)")
     return re.search(pattern, text) is not None
 
 
