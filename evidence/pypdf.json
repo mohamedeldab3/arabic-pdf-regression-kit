@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kit_version": "0.1.0",
-  "timestamp_utc": "2026-10-24T00:44:32.516701+00:00",
+  "timestamp_utc": "2026-10-24T00:46:50.190549+00:00",
   "python": "3.11.4",
   "platform": "Windows-10-10.0.22621-SP0",
   "corpus_sha256": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
@@ -19,7 +19,9 @@
     "--engine",
     "pypdf",
     "--output",
-    "evidence/pypdf.json"
+    "evidence/pypdf.json",
+    "--html",
+    "evidence/pypdf.html"
   ],
   "exit_code": 1,
   "summary": {

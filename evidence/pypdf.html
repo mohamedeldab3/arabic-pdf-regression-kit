@@ -1,0 +1,1479 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><title>Arabic PDF regression report</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto;padding:0 20px;color:#172b3a;background:#f5f7fa}section{border-top:2px solid #b6c7d6;padding:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:16px;border:1px solid #dae1e8}h1,h2{color:#144b63}</style><h1>Arabic PDF regression report</h1><p>Independent synthetic corpus; not a general accuracy benchmark. Diff offsets refer to selected comparison text.</p><h2>Run metadata and reproduction argv</h2><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;kit_version&quot;: &quot;0.1.0&quot;,
+  &quot;timestamp_utc&quot;: &quot;2026-10-24T00:46:50.190549+00:00&quot;,
+  &quot;python&quot;: &quot;3.11.4&quot;,
+  &quot;platform&quot;: &quot;Windows-10-10.0.22621-SP0&quot;,
+  &quot;corpus_sha256&quot;: &quot;6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd&quot;,
+  &quot;engine&quot;: {
+    &quot;name&quot;: &quot;pypdf&quot;,
+    &quot;version&quot;: &quot;6.21.2&quot;,
+    &quot;configuration&quot;: {
+      &quot;extraction_mode&quot;: &quot;plain&quot;,
+      &quot;ocr&quot;: false
+    }
+  },
+  &quot;reproduce_argv&quot;: [
+    &quot;arabic-pdf-kit&quot;,
+    &quot;run&quot;,
+    &quot;--engine&quot;,
+    &quot;pypdf&quot;,
+    &quot;--output&quot;,
+    &quot;evidence/pypdf.json&quot;,
+    &quot;--html&quot;,
+    &quot;evidence/pypdf.html&quot;
+  ],
+  &quot;exit_code&quot;: 1,
+  &quot;summary&quot;: {
+    &quot;PASS&quot;: 0,
+    &quot;FAIL&quot;: 8,
+    &quot;ERROR&quot;: 0,
+    &quot;SKIPPED&quot;: 0
+  }
+}</pre><section><h2>arabic-only: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">تشرق الشمس فوق المدينة
+يقرأ الطفل كتابا جديدا</pre><h3>Raw extraction</h3><pre dir="auto">تشرق الشمس فوق المدينة 
+يقر!أ الطفل كتابا جديدا </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;يقرأ الطفل كتابا جديدا&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        0
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        1
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0006&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        1,
+        1
+      ],
+      &quot;actual_span&quot;: [
+        2,
+        3
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0012&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        3,
+        3
+      ],
+      &quot;actual_span&quot;: [
+        5,
+        6
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        7,
+        7
+      ],
+      &quot;actual_span&quot;: [
+        10,
+        11
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0012&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        11,
+        11
+      ],
+      &quot;actual_span&quot;: [
+        15,
+        16
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u000f&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        13,
+        13
+      ],
+      &quot;actual_span&quot;: [
+        18,
+        19
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        19,
+        19
+      ],
+      &quot;actual_span&quot;: [
+        25,
+        26
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0006&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        20,
+        20
+      ],
+      &quot;actual_span&quot;: [
+        27,
+        28
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0004&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        21,
+        21
+      ],
+      &quot;actual_span&quot;: [
+        29,
+        30
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        23,
+        23
+      ],
+      &quot;actual_span&quot;: [
+        32,
+        33
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0006&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        24,
+        24
+      ],
+      &quot;actual_span&quot;: [
+        34,
+        35
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        26,
+        26
+      ],
+      &quot;actual_span&quot;: [
+        37,
+        38
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;!&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        31,
+        31
+      ],
+      &quot;actual_span&quot;: [
+        43,
+        44
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        35,
+        35
+      ],
+      &quot;actual_span&quot;: [
+        48,
+        49
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u001a&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        37,
+        37
+      ],
+      &quot;actual_span&quot;: [
+        51,
+        52
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0019&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        40,
+        40
+      ],
+      &quot;actual_span&quot;: [
+        55,
+        56
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0016&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        42,
+        42
+      ],
+      &quot;actual_span&quot;: [
+        58,
+        59
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0006&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;arabic-only&quot;,
+  &quot;tags&quot;: [
+    &quot;arabic&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;expected&quot;: &quot;تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا&quot;,
+  &quot;phrases&quot;: [
+    &quot;تشرق الشمس فوق المدينة&quot;,
+    &quot;يقرأ الطفل كتابا جديدا&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>mixed-paragraph: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">هذا تقرير عن Python ومكتبة Open Source في القاهرة</pre><h3>Raw extraction</h3><pre dir="auto">‪‬ في القاهرة Open Source ‪‬ ومكتبةPython ه+ذا )تقر)ير ع&#x27;ن </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: false,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;identifiers&quot;,
+      &quot;expected&quot;: &quot;Python&quot;,
+      &quot;detail&quot;: &quot;Exact token absent&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        0
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        12
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;‪‬ ف ي ال\u0007قا&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;delete&quot;,
+      &quot;expected_span&quot;: [
+        1,
+        6
+      ],
+      &quot;actual_span&quot;: [
+        13,
+        13
+      ],
+      &quot;expected&quot;: &quot;ذا تق&quot;,
+      &quot;actual&quot;: &quot;&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        7,
+        25
+      ],
+      &quot;actual_span&quot;: [
+        14,
+        15
+      ],
+      &quot;expected&quot;: &quot;ير عن Python ومكتب&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        39,
+        40
+      ],
+      &quot;actual_span&quot;: [
+        29,
+        59
+      ],
+      &quot;expected&quot;: &quot;ف&quot;,
+      &quot;actual&quot;: &quot;‪‬ ومك ت\u001bب\u0019ةPython ه+ذا )ت\u0007قر)&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        41,
+        41
+      ],
+      &quot;actual_span&quot;: [
+        60,
+        61
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;ر&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        42,
+        49
+      ],
+      &quot;actual_span&quot;: [
+        62,
+        65
+      ],
+      &quot;expected&quot;: &quot;القاهرة&quot;,
+      &quot;actual&quot;: &quot;ع&#x27;ن&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;mixed-paragraph&quot;,
+  &quot;tags&quot;: [
+    &quot;arabic&quot;,
+    &quot;english&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;
+  ],
+  &quot;expected&quot;: &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;,
+  &quot;phrases&quot;: [
+    &quot;هذا تقرير عن Python ومكتبة Open Source في القاهرة&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;Python&quot;,
+    &quot;Open Source&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>invoice-id: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">رقم الفاتورة INV-2026-042 للعميل الجديد</pre><h3>Raw extraction</h3><pre dir="auto">‪‬ للعم	يل الجديد INV-2026-042 ر&quot;قم الفاتورة </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        2
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        6
+      ],
+      &quot;expected&quot;: &quot;رق&quot;,
+      &quot;actual&quot;: &quot;‪‬ للع&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        3,
+        3
+      ],
+      &quot;actual_span&quot;: [
+        7,
+        10
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; يل&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        6,
+        12
+      ],
+      &quot;actual_span&quot;: [
+        13,
+        19
+      ],
+      &quot;expected&quot;: &quot;فاتورة&quot;,
+      &quot;actual&quot;: &quot;\u0005جد\u0003يد&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        26,
+        29
+      ],
+      &quot;actual_span&quot;: [
+        33,
+        36
+      ],
+      &quot;expected&quot;: &quot;للع&quot;,
+      &quot;actual&quot;: &quot;ر\&quot;ق&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;delete&quot;,
+      &quot;expected_span&quot;: [
+        30,
+        32
+      ],
+      &quot;actual_span&quot;: [
+        37,
+        37
+      ],
+      &quot;expected&quot;: &quot;يل&quot;,
+      &quot;actual&quot;: &quot;&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        35,
+        39
+      ],
+      &quot;actual_span&quot;: [
+        40,
+        49
+      ],
+      &quot;expected&quot;: &quot;جديد&quot;,
+      &quot;actual&quot;: &quot; فا\u0003تور\u0018ة&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;invoice-id&quot;,
+  &quot;tags&quot;: [
+    &quot;identifier&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;
+  ],
+  &quot;expected&quot;: &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;,
+  &quot;phrases&quot;: [
+    &quot;رقم الفاتورة INV-2026-042 للعميل الجديد&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;INV-2026-042&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>product-order: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907</pre><h3>Raw extraction</h3><pre dir="auto">‬‪ORD-907 ‪‬ ضمن الطلب SKU-AB12 &amp;تم $شحن الم!نتج </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        1
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        15
+      ],
+      &quot;expected&quot;: &quot;ت&quot;,
+      &quot;actual&quot;: &quot;‬‪ORD-907 ‪‬ \u0014ض&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        2,
+        5
+      ],
+      &quot;actual_span&quot;: [
+        16,
+        17
+      ],
+      &quot;expected&quot;: &quot; شح&quot;,
+      &quot;actual&quot;: &quot;\u0011&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        9,
+        13
+      ],
+      &quot;actual_span&quot;: [
+        21,
+        25
+      ],
+      &quot;expected&quot;: &quot;منتج&quot;,
+      &quot;actual&quot;: &quot;طل ب&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        23,
+        24
+      ],
+      &quot;actual_span&quot;: [
+        35,
+        37
+      ],
+      &quot;expected&quot;: &quot;ض&quot;,
+      &quot;actual&quot;: &quot;&amp;ت&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        25,
+        25
+      ],
+      &quot;actual_span&quot;: [
+        38,
+        43
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; $شح\u0011&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        29,
+        32
+      ],
+      &quot;actual_span&quot;: [
+        47,
+        50
+      ],
+      &quot;expected&quot;: &quot;طلب&quot;,
+      &quot;actual&quot;: &quot;م!ن&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        33,
+        40
+      ],
+      &quot;actual_span&quot;: [
+        51,
+        54
+      ],
+      &quot;expected&quot;: &quot;ORD-907&quot;,
+      &quot;actual&quot;: &quot;ت ج&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;product-order&quot;,
+  &quot;tags&quot;: [
+    &quot;identifier&quot;,
+    &quot;bidi&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;
+  ],
+  &quot;expected&quot;: &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;,
+  &quot;phrases&quot;: [
+    &quot;تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907&quot;
+  ],
+  &quot;identifiers&quot;: [
+    &quot;SKU-AB12&quot;,
+    &quot;ORD-907&quot;
+  ],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>two-digit-systems: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">عدد الكتب 123 وعدد الأقلام ١٢٣</pre><h3>Raw extraction</h3><pre dir="auto">‬‪١٢٣ ‪‬ وعدد الأ
+قلام123 عدد الكتب</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: false
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;numbers&quot;,
+      &quot;expected&quot;: &quot;123&quot;,
+      &quot;detail&quot;: &quot;Exact token absent&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        3
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        5
+      ],
+      &quot;expected&quot;: &quot;عدد&quot;,
+      &quot;actual&quot;: &quot;‬‪١٢٣&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        4,
+        13
+      ],
+      &quot;actual_span&quot;: [
+        6,
+        8
+      ],
+      &quot;expected&quot;: &quot;الكتب 123&quot;,
+      &quot;actual&quot;: &quot;‪‬&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        21,
+        21
+      ],
+      &quot;actual_span&quot;: [
+        16,
+        17
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        22,
+        22
+      ],
+      &quot;actual_span&quot;: [
+        18,
+        19
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        26,
+        26
+      ],
+      &quot;actual_span&quot;: [
+        23,
+        26
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;123&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        27,
+        30
+      ],
+      &quot;actual_span&quot;: [
+        27,
+        38
+      ],
+      &quot;expected&quot;: &quot;١٢٣&quot;,
+      &quot;actual&quot;: &quot;عدد الك\u0019ت\u0017ب&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;two-digit-systems&quot;,
+  &quot;tags&quot;: [
+    &quot;digits&quot;,
+    &quot;arabic-indic&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;
+  ],
+  &quot;expected&quot;: &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;,
+  &quot;phrases&quot;: [
+    &quot;عدد الكتب 123 وعدد الأقلام ١٢٣&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [
+    &quot;123&quot;,
+    &quot;١٢٣&quot;
+  ],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>amount-date: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">المبلغ 1250.75 جنيه بتاريخ 2026-10-24</pre><h3>Raw extraction</h3><pre dir="auto">‬‪2026-10-24 ‪‬ جنيه بتاري
+خ 1250.75 المبلغ</pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;replace&quot;,
+      &quot;expected_span&quot;: [
+        0,
+        27
+      ],
+      &quot;actual_span&quot;: [
+        0,
+        2
+      ],
+      &quot;expected&quot;: &quot;المبلغ 1250.75 جنيه بتاريخ &quot;,
+      &quot;actual&quot;: &quot;‬‪&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        37,
+        37
+      ],
+      &quot;actual_span&quot;: [
+        12,
+        51
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; ‪‬ \u0017ج\u0015ن\u0010يه \u0012ب\u0010تار ي خ 1250.75 الم\u0015بل غ&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;amount-date&quot;,
+  &quot;tags&quot;: [
+    &quot;decimal&quot;,
+    &quot;date&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;
+  ],
+  &quot;expected&quot;: &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;,
+  &quot;phrases&quot;: [
+    &quot;المبلغ 1250.75 جنيه بتاريخ 2026-10-24&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [
+    &quot;1250.75&quot;,
+    &quot;2026-10-24&quot;
+  ],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>paragraph-order: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">الفقرة الأولى بداية الرحلة
+
+الفقرة الثانية وصول القطار
+
+الفقرة الثالثة نهاية اليوم</pre><h3>Raw extraction</h3><pre dir="auto">الفقرة الأولى بدا	ية الرحلة 
+الفقرة الثانية وصول القطار 
+الفقرة الثالثة نها	ية اليوم </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;الفقرة الأولى بداية الرحلة&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;الفقرة الثانية وصول القطار&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;الفقرة الثالثة نهاية اليوم&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        2,
+        2
+      ],
+      &quot;actual_span&quot;: [
+        2,
+        3
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        3,
+        3
+      ],
+      &quot;actual_span&quot;: [
+        4,
+        5
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        5,
+        5
+      ],
+      &quot;actual_span&quot;: [
+        7,
+        8
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0012&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        9,
+        9
+      ],
+      &quot;actual_span&quot;: [
+        12,
+        13
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0010&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        17,
+        17
+      ],
+      &quot;actual_span&quot;: [
+        21,
+        22
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        18,
+        18
+      ],
+      &quot;actual_span&quot;: [
+        23,
+        24
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        25,
+        25
+      ],
+      &quot;actual_span&quot;: [
+        31,
+        32
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        29,
+        29
+      ],
+      &quot;actual_span&quot;: [
+        36,
+        37
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        30,
+        30
+      ],
+      &quot;actual_span&quot;: [
+        38,
+        39
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        32,
+        32
+      ],
+      &quot;actual_span&quot;: [
+        41,
+        42
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0012&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        36,
+        36
+      ],
+      &quot;actual_span&quot;: [
+        46,
+        47
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        38,
+        38
+      ],
+      &quot;actual_span&quot;: [
+        49,
+        50
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        39,
+        39
+      ],
+      &quot;actual_span&quot;: [
+        51,
+        52
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        40,
+        40
+      ],
+      &quot;actual_span&quot;: [
+        53,
+        54
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        49,
+        49
+      ],
+      &quot;actual_span&quot;: [
+        63,
+        64
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        56,
+        56
+      ],
+      &quot;actual_span&quot;: [
+        71,
+        72
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        57,
+        57
+      ],
+      &quot;actual_span&quot;: [
+        73,
+        74
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0014&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        59,
+        59
+      ],
+      &quot;actual_span&quot;: [
+        76,
+        77
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0012&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        63,
+        63
+      ],
+      &quot;actual_span&quot;: [
+        81,
+        82
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        66,
+        66
+      ],
+      &quot;actual_span&quot;: [
+        85,
+        86
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        67,
+        67
+      ],
+      &quot;actual_span&quot;: [
+        87,
+        88
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        72,
+        72
+      ],
+      &quot;actual_span&quot;: [
+        93,
+        94
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        73,
+        73
+      ],
+      &quot;actual_span&quot;: [
+        95,
+        96
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0002&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        77,
+        77
+      ],
+      &quot;actual_span&quot;: [
+        100,
+        101
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;paragraph-order&quot;,
+  &quot;tags&quot;: [
+    &quot;order&quot;,
+    &quot;paragraphs&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم&quot;
+  ],
+  &quot;expected&quot;: &quot;الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم&quot;,
+  &quot;phrases&quot;: [
+    &quot;الفقرة الأولى بداية الرحلة&quot;,
+    &quot;الفقرة الثانية وصول القطار&quot;,
+    &quot;الفقرة الثالثة نهاية اليوم&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section><section><h2>page-order: FAIL</h2><p>Mode: nfc-whitespace</p><h3>Expected logical text</h3><pre dir="auto">الصفحة الأولى بدء العمل
+
+الصفحة الثانية مراجعة النتائج</pre><h3>Raw extraction</h3><pre dir="auto">الصفحة الأولى 	بدء العمل 
+
+الصفحة الثا	نية مراجعة النتا	ئج </pre><h3>Checks</h3><pre>{
+  &quot;strict&quot;: false,
+  &quot;normalized&quot;: false,
+  &quot;phrase_order&quot;: false,
+  &quot;identifiers&quot;: true,
+  &quot;numbers&quot;: true
+}</pre><h3>Findings and differences</h3><pre dir="auto">{
+  &quot;findings&quot;: [
+    {
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;detail&quot;: &quot;Selected text comparison differs&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;الصفحة الأولى بدء العمل&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;phrase&quot;,
+      &quot;expected&quot;: &quot;الصفحة الثانية مراجعة النتائج&quot;,
+      &quot;detail&quot;: &quot;Missing or out of logical order&quot;
+    }
+  ],
+  &quot;differences&quot;: [
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        3,
+        3
+      ],
+      &quot;actual_span&quot;: [
+        3,
+        4
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0013&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        5,
+        5
+      ],
+      &quot;actual_span&quot;: [
+        6,
+        7
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0010&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        9,
+        9
+      ],
+      &quot;actual_span&quot;: [
+        11,
+        12
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        27,
+        27
+      ],
+      &quot;actual_span&quot;: [
+        30,
+        31
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0013&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        29,
+        29
+      ],
+      &quot;actual_span&quot;: [
+        33,
+        34
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0010&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        33,
+        33
+      ],
+      &quot;actual_span&quot;: [
+        38,
+        39
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u001a&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        35,
+        35
+      ],
+      &quot;actual_span&quot;: [
+        41,
+        42
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        36,
+        36
+      ],
+      &quot;actual_span&quot;: [
+        43,
+        44
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u001a&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        37,
+        37
+      ],
+      &quot;actual_span&quot;: [
+        45,
+        46
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0010&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        42,
+        42
+      ],
+      &quot;actual_span&quot;: [
+        51,
+        52
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        44,
+        44
+      ],
+      &quot;actual_span&quot;: [
+        54,
+        55
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0010&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        48,
+        48
+      ],
+      &quot;actual_span&quot;: [
+        59,
+        60
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        49,
+        49
+      ],
+      &quot;actual_span&quot;: [
+        61,
+        62
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u001a&quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        51,
+        51
+      ],
+      &quot;actual_span&quot;: [
+        64,
+        65
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot; &quot;
+    },
+    {
+      &quot;kind&quot;: &quot;insert&quot;,
+      &quot;expected_span&quot;: [
+        52,
+        52
+      ],
+      &quot;actual_span&quot;: [
+        66,
+        67
+      ],
+      &quot;expected&quot;: &quot;&quot;,
+      &quot;actual&quot;: &quot;\u0016&quot;
+    }
+  ]
+}</pre><details><summary>Full fixture expectations</summary><pre dir="auto">{
+  &quot;id&quot;: &quot;page-order&quot;,
+  &quot;tags&quot;: [
+    &quot;order&quot;,
+    &quot;pages&quot;
+  ],
+  &quot;pages&quot;: [
+    &quot;الصفحة الأولى بدء العمل&quot;,
+    &quot;الصفحة الثانية مراجعة النتائج&quot;
+  ],
+  &quot;expected&quot;: &quot;الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج&quot;,
+  &quot;phrases&quot;: [
+    &quot;الصفحة الأولى بدء العمل&quot;,
+    &quot;الصفحة الثانية مراجعة النتائج&quot;
+  ],
+  &quot;identifiers&quot;: [],
+  &quot;numbers&quot;: [],
+  &quot;provenance&quot;: &quot;Original synthetic content authored for this project; no issue attachments&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;generation&quot;: &quot;fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate&quot;
+}</pre></details></section></html>

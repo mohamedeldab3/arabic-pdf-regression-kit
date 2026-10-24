@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "before_engine": {
+    "name": "pypdf",
+    "version": "6.21.2",
+    "configuration": {
+      "extraction_mode": "plain",
+      "ocr": false
+    }
+  },
+  "after_engine": {
+    "name": "pypdf",
+    "version": "6.21.2",
+    "configuration": {
+      "extraction_mode": "plain",
+      "ocr": false
+    }
+  },
+  "regressions": [],
+  "improvements": [],
+  "incomparable": [],
+  "exit_code": 0
+}
