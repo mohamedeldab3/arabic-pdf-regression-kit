@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    {
+      "id": "arabic-only",
+      "tags": [
+        "arabic"
+      ],
+      "pages": [
+        "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا"
+      ],
+      "expected": "تشرق الشمس فوق المدينة\nيقرأ الطفل كتابا جديدا",
+      "phrases": [
+        "تشرق الشمس فوق المدينة",
+        "يقرأ الطفل كتابا جديدا"
+      ],
+      "identifiers": [],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "mixed-paragraph",
+      "tags": [
+        "arabic",
+        "english",
+        "bidi"
+      ],
+      "pages": [
+        "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+      ],
+      "expected": "هذا تقرير عن Python ومكتبة Open Source في القاهرة",
+      "phrases": [
+        "هذا تقرير عن Python ومكتبة Open Source في القاهرة"
+      ],
+      "identifiers": [
+        "Python",
+        "Open Source"
+      ],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "invoice-id",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "pages": [
+        "رقم الفاتورة INV-2026-042 للعميل الجديد"
+      ],
+      "expected": "رقم الفاتورة INV-2026-042 للعميل الجديد",
+      "phrases": [
+        "رقم الفاتورة INV-2026-042 للعميل الجديد"
+      ],
+      "identifiers": [
+        "INV-2026-042"
+      ],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "product-order",
+      "tags": [
+        "identifier",
+        "bidi"
+      ],
+      "pages": [
+        "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+      ],
+      "expected": "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907",
+      "phrases": [
+        "تم شحن المنتج SKU-AB12 ضمن الطلب ORD-907"
+      ],
+      "identifiers": [
+        "SKU-AB12",
+        "ORD-907"
+      ],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "two-digit-systems",
+      "tags": [
+        "digits",
+        "arabic-indic"
+      ],
+      "pages": [
+        "عدد الكتب 123 وعدد الأقلام ١٢٣"
+      ],
+      "expected": "عدد الكتب 123 وعدد الأقلام ١٢٣",
+      "phrases": [
+        "عدد الكتب 123 وعدد الأقلام ١٢٣"
+      ],
+      "identifiers": [],
+      "numbers": [
+        "123",
+        "١٢٣"
+      ],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "amount-date",
+      "tags": [
+        "decimal",
+        "date"
+      ],
+      "pages": [
+        "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+      ],
+      "expected": "المبلغ 1250.75 جنيه بتاريخ 2026-10-24",
+      "phrases": [
+        "المبلغ 1250.75 جنيه بتاريخ 2026-10-24"
+      ],
+      "identifiers": [],
+      "numbers": [
+        "1250.75",
+        "2026-10-24"
+      ],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "paragraph-order",
+      "tags": [
+        "order",
+        "paragraphs"
+      ],
+      "pages": [
+        "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم"
+      ],
+      "expected": "الفقرة الأولى بداية الرحلة\n\nالفقرة الثانية وصول القطار\n\nالفقرة الثالثة نهاية اليوم",
+      "phrases": [
+        "الفقرة الأولى بداية الرحلة",
+        "الفقرة الثانية وصول القطار",
+        "الفقرة الثالثة نهاية اليوم"
+      ],
+      "identifiers": [],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    },
+    {
+      "id": "page-order",
+      "tags": [
+        "order",
+        "pages"
+      ],
+      "pages": [
+        "الصفحة الأولى بدء العمل",
+        "الصفحة الثانية مراجعة النتائج"
+      ],
+      "expected": "الصفحة الأولى بدء العمل\n\nالصفحة الثانية مراجعة النتائج",
+      "phrases": [
+        "الصفحة الأولى بدء العمل",
+        "الصفحة الثانية مراجعة النتائج"
+      ],
+      "identifiers": [],
+      "numbers": [],
+      "provenance": "Original synthetic content authored for this project; no issue attachments",
+      "license": "MIT",
+      "generation": "fpdf2 2.8.9 + uharfbuzz 0.57.0; fixtures generate"
+    }
+  ]
+}

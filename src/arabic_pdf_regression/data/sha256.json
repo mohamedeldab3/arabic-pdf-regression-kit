@@ -1,0 +1,21 @@
+{
+  "manifest.json": "6f54fa2a7a13d6208263b35ec1f80ccfaf5962f0b4f062aeea963a400e0a17dd",
+  "fonts/NotoNaskhArabic.ttf": "67b5a525a661b607971fbd3f96a81b89d3a768e74534fca84f18ac97e6fab72f",
+  "fonts/OFL.txt": "a7a5a25eb188bf1cd96982030d53e23c33485c69b1044a562254226857ee13af",
+  "pdfs/amount-date.pdf": "f51357bed02fc666650a32502b055d12cfc91b46e5af8ee27b3e66533f06a411",
+  "pdfs/arabic-only.pdf": "698448e4c357af063a6a576c71fecb5cc66938b1e941cdd5e5d050b57053f290",
+  "pdfs/invoice-id.pdf": "540b964f05db1bb85209d3d0ac9a479e11cc9cbdc66896f150e927bba9d66502",
+  "pdfs/mixed-paragraph.pdf": "40ce21f22be25746fa665250bcc5005d507102a37cced69782c54b2c084a31c7",
+  "pdfs/page-order.pdf": "cbfc3842bf0701c93eb612346e1050c5b706a5eb60e150b324f8012e9becced9",
+  "pdfs/paragraph-order.pdf": "a854b9b04e856330d4cbb9d5bad3dc99abb912e8439fc299aa6ef0e014364559",
+  "pdfs/product-order.pdf": "f8fdc9a2a43b606744921abfe5b84e20842b099829dbeb25752a380dd29ae40b",
+  "pdfs/two-digit-systems.pdf": "64681858ee4908814783d3aa0e5df0f62643603702a3e9a509deda5fe5ec2870",
+  "sources/amount-date.txt": "bfdf1b756c7abc5361fe42ed8ca89448708062b6b08f4d8744bd1b680351a0a4",
+  "sources/arabic-only.txt": "e28949ebc85fc02b5a94b22c32a62c3be8ac38fc0b6f305ed7188973722c08cb",
+  "sources/invoice-id.txt": "bfb3beec359acb9d27657630e375fafcbaf217517a51836708374a31bf6202e8",
+  "sources/mixed-paragraph.txt": "f03490dfad7b5a46dd1baf316702e96d59534f852163a93c4f65a35daed62629",
+  "sources/page-order.txt": "4edaa3d68344944cf60d90528695fe9a3d66ceb3df1fa0ec2f2971c700bc9bb3",
+  "sources/paragraph-order.txt": "fd21bde1351065927d41cb65a4df3a04d4313ecef35b07cbc94e40a3518c7847",
+  "sources/product-order.txt": "67d028e0012ddf2304a79301c3219124be1d15adb7262db5dc86a3f8026152da",
+  "sources/two-digit-systems.txt": "64f851a6377f82e1fba071532ce7dbb617e3bece00d88489cd80dc2d9a452930"
+}
